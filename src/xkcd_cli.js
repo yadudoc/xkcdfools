@@ -179,7 +179,6 @@ TerminalShell.commands['restart'] = TerminalShell.commands['reboot'] = function(
 	}
 };
 
-// edit area
 function linkFile(url) {
 	return {type:'link', enter:function() {
 		window.location = url;
@@ -188,12 +187,24 @@ function linkFile(url) {
 
 function dirFile(dirname) {
     return {type:'dir', enter:function() {
-	    //print('Hey we are in the dirFile fun( '+dirname+' ).');	   
-	    //edit
-		 TerminalShell.pwd = Event_FS;    
+						if ( dirname == 'events' ){			
+		 	TerminalShell.pwd = Event_FS;    
+	 		}else if ( dirname == 'workshops'){
+				// edit
+			}else if ( dirname == 'sponsors'){
+				// edit
+			}else if ( dirname == 'register'){
+				// edit
+			}else if ( dirname == 'about'){
+				// edit
+			}else if ( dirname == 'contacts'){
+				// edit
+			}else{
+			}
+		
 	}};
 }
-// edit area
+
 Event_FS = {
 		'quiz.txt': {type:'file', read:function(terminal) {	
 	terminal.print($('<h4>').text('yay quiz.'));
@@ -226,9 +237,10 @@ Event_FS = {
 	
 Filesystem = {
 	'welcome.txt': {type:'file', read:function(terminal) {	
-	terminal.print($('<h4>').text('Welcome to the unixkcd console.'));
-		terminal.print('To navigate the comics, enter "next", "prev", "first", "last", "display", or "random".');
+	terminal.print($('<h4>').text('Welcome to the dotslash console.'));
+		//terminal.print('To navigate the system, enter "next", "prev", "first", "last", "display", or "random".');
 		terminal.print('Use "ls", "cat", and "cd" to navigate the filesystem.');
+		terminal.print('Most unix commands work (un)usually. ');
 	}},
 	'license.txt': {type:'file', read:function(terminal) {
 		terminal.print($('<p>').html('Client-side logic for Wordpress CLI theme :: <a href="http://thrind.xamai.ca/">R. McFarland, 2006, 2007, 2008</a>'));
@@ -253,27 +265,30 @@ Filesystem = {
 		});
 	}}
 };
-// edit
-//Filesystem['blog'] = Filesystem['blag'] = linkFile('http://blag.xkcd.com');
-//Filesystem['forums'] = Filesystem['fora'] = linkFile('http://forums.xkcd.com/');
-// edit
+
 Filesystem['events'] = dirFile('events');
-Filesystem['sponsor'] =dirFile('sponsor');
-Filesystem['store'] = linkFile('http://store.xkcd.com/');
-Filesystem['about'] = linkFile('http://xkcd.com/about/');
+Filesystem['workshops'] =dirFile('workshops');
+Filesystem['sponsors'] =dirFile('sponsors');
+Filesystem['register'] =dirFile('register');
+Filesystem['about'] =dirFile('about');
+Filesystem['contacts'] =dirFile('contacts');
 TerminalShell.pwd = Filesystem;
 
 TerminalShell.commands['cd'] = function(terminal, path) {
-	if (path in this.pwd) {
-		if (this.pwd[path].type == 'link') {
-			this.pwd[path].enter(terminal);
-		}else if (this.pwd[path].type == 'dir') {
-			this.pwd[path].enter(terminal);
-		} else if (this.pwd[path].type == 'file') {
-			terminal.print('cd: '+path+': Not a directory');
-		}
-	} else {
-		terminal.print('cd: '+path+': No such file or directory');
+	if (path == '..'){
+		TerminalShell.pwd = Filesystem;		
+	}else{
+			if (path in this.pwd) {
+			if (this.pwd[path].type == 'link') {
+				this.pwd[path].enter(terminal);
+			}else if (this.pwd[path].type == 'dir') {
+				this.pwd[path].enter(terminal);
+			} else if (this.pwd[path].type == 'file') {
+				terminal.print('cd: '+path+': Not a directory');
+			}
+		}else {
+			terminal.print('cd: '+path+': No such file or directory');
+		}	
 	}
 };
 
@@ -460,7 +475,7 @@ TerminalShell.commands['locate'] = function(terminal, what) {
 
 Adventure = {
 	rooms: {
-		0:{description:'You are at a computer using unixkcd.', exits:{west:1, south:10}},
+		0:{description:'You are at a computer using dotslash.', exits:{west:1, south:10}},
 		1:{description:'Life is peaceful there.', exits:{east:0, west:2}},
 		2:{description:'In the open air.', exits:{east:1, west:3}},
 		3:{description:'Where the skies are blue.', exits:{east:2, west:4}},
