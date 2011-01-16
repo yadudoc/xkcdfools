@@ -1,14 +1,16 @@
 DotSlash
 ========
 
-Was quickly hacked up from the source for xkcd in a matter of hours and for
-which reason, there wasn't enough time to write the credits myself. I'm
-including the credits from the uni.xkcd(github.com/chromacode/xkcdfools)
-source.
+Was quickly hacked up from the source for xkcd in a matter 
+of hours and for which reason, there wasn't enough time to
+write the credits myself. I'm including the credits from 
+the uni.xkcd(github.com/chromacode/xkcdfools) source.
 
-Tonnes of thanks to Chromacode for having the source for free :)
-And even more for the asses who did the site to resemble windows -
-and piss me off, LOL :
+Tonnes of thanks to Chromacode for having the source for 
+free :)
+
+And even more for the asses who did the site to resemble
+windows - and piss me off, LOL :
 
 Credits
 -------

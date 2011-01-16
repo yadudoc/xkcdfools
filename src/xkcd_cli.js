@@ -265,13 +265,16 @@ Filesystem = {
 		});
 	}}
 };
-
+	
 Filesystem['events'] = dirFile('events');
 Filesystem['workshops'] =dirFile('workshops');
 Filesystem['sponsors'] =dirFile('sponsors');
 Filesystem['register'] =dirFile('register');
 Filesystem['about'] =dirFile('about');
 Filesystem['contacts'] =dirFile('contacts');
+
+
+
 TerminalShell.pwd = Filesystem;
 
 TerminalShell.commands['cd'] = function(terminal, path) {
@@ -295,12 +298,20 @@ TerminalShell.commands['cd'] = function(terminal, path) {
 TerminalShell.commands['dir'] =
 TerminalShell.commands['ls'] = function(terminal, path) {
 	var name_list = $('<ul>');
-	$.each(this.pwd, function(name, obj) {
+	var flag_license = false ;
+	$.each(this.pwd, function(name, obj) {		
+		if (name == 'license.txt'){
+			flag_license = true ;
+			name = '';
+		}
 		if (obj.type == 'dir') {
 			name += '/';
 		}
-		name_list.append($('<li>').text(name));
+		name_list.append($('<li>').text(name));	
 	});
+	if ( flag_license == true ){
+		name_list.append($('<li>').text('license.txt'));
+	}
 	terminal.print(name_list);
 };
 
