@@ -188,11 +188,42 @@ function linkFile(url) {
 
 function dirFile(dirname) {
     return {type:'dir', enter:function() {
-	    terminal.print('Hey we are in the dirFile fun( '+dirname+' ).');
+	    //print('Hey we are in the dirFile fun( '+dirname+' ).');	   
+	    //edit
+		 TerminalShell.pwd = Event_FS;    
 	}};
 }
 // edit area
-
+Event_FS = {
+		'quiz.txt': {type:'file', read:function(terminal) {	
+	terminal.print($('<h4>').text('yay quiz.'));
+		terminal.print('Blah Blah Blah Blah Blah Blah Blah Blah');
+		terminal.print(' Blah Blah Blah Blah Blah');
+	}},
+	'googly.txt': {type:'file', read:function(terminal) {
+		terminal.print($('<p>').html('Client-side logic for Wordpress CLI theme :: <a href="http://thrind.xamai.ca/">R. McFarland, 2006, 2007, 2008</a>'));
+		//terminal.print($('<p>').html('jQuery rewrite and overhaul :: <a href="http://www.chromakode.com/">Chromakode, 2010</a>'));
+		terminal.print();
+		$.each([
+			'This program is free software; you can redistribute it and/or',
+			'modify it under the terms of the GNU General Public License',
+			'as published by the Free Software Foundation; either version 2',
+			'of the License, or (at your option) any later version.',
+			'',
+			'This program is distributed in the hope that it will be useful,',
+			'but WITHOUT ANY WARRANTY; without even the implied warranty of',
+			'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the',
+			'GNU General Public License for more details.',
+			'',
+			'You should have received a copy of the GNU General Public License',
+			'along with this program; if not, write to the Free Software',
+			'Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.'
+		], function(num, line) {
+			terminal.print(line);
+		});
+	}}
+};
+	
 Filesystem = {
 	'welcome.txt': {type:'file', read:function(terminal) {	
 	terminal.print($('<h4>').text('Welcome to the unixkcd console.'));
