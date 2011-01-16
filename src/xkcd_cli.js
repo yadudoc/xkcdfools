@@ -188,17 +188,24 @@ function linkFile(url) {
 function dirFile(dirname) {
     return {type:'dir', enter:function() {
 						if ( dirname == 'events' ){			
-		 	TerminalShell.pwd = Event_FS;    
+		 	TerminalShell.pwd = Event_FS;
+		 	Terminal.config.prompt = 'guest@dotSlash:/events$';
+		 	Terminal.updateInputDisplay(); 
 	 		}else if ( dirname == 'workshops'){
 				// edit
+				Terminal.config.prompt = 'guest@dotSlash:/workshops$';
 			}else if ( dirname == 'sponsors'){
 				// edit
+				Terminal.config.prompt = 'guest@dotSlash:/sponsors$';
 			}else if ( dirname == 'register'){
 				// edit
+				Terminal.config.prompt = 'guest@dotSlash:/register$';
 			}else if ( dirname == 'about'){
 				// edit
+				Terminal.config.prompt = 'guest@dotSlash:/about$';
 			}else if ( dirname == 'contacts'){
 				// edit
+				Terminal.config.prompt = 'guest@dotSlash:/contacts$';
 			}else{
 			}
 		
@@ -279,7 +286,9 @@ TerminalShell.pwd = Filesystem;
 
 TerminalShell.commands['cd'] = function(terminal, path) {
 	if (path == '..'){
-		TerminalShell.pwd = Filesystem;		
+		TerminalShell.pwd = Filesystem;
+		//edit
+		Terminal.config.prompt = 'guest@dotSlash:/$';		
 	}else{
 			if (path in this.pwd) {
 			if (this.pwd[path].type == 'link') {
