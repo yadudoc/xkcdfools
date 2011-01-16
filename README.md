@@ -1,11 +1,14 @@
-unixkcd
-=========
+DotSlash
+========
 
-An interactive web interface for the webcomic [xkcd](http://xkcd.com) resembling a Unix terminal. Comics can be browsed and displayed efficiently via the commands "first", "prev", "next", and "last".
+Was quickly hacked up from the source for xkcd in a matter of hours and for
+which reason, there wasn't enough time to write the credits myself. I'm
+including the credits from the uni.xkcd(github.com/chromacode/xkcdfools)
+source.
 
-Originally created as a joke for April Fools' 2010, the interface is now available at [http://xkcd.com/unixkcd/](http://xkcd.com/unixkcd/).
-
-Use the source, Luke.
+Tonnes of thanks to Chromacode for having the source for free :)
+And even more for the asses who did the site to resemble windows -
+and piss me off, LOL :
 
 Credits
 -------
