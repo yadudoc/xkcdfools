@@ -248,7 +248,7 @@ Filesystem['Events'] = linkFile(Events_FS);
 Filesystem['Workshops'] = linkFile('https://docs.google.com/document/d/169ibkoZqveAQoYulnZmAp2VNfqpS-XGR8szLJaDxG8k/edit?hl=en&authkey=CILeuasG');
 Filesystem['Sponsors'] = linkFile('http://www.google.com');
 Filesystem['Register'] = linkFile('http://www.google.com');
-TerminalShell.pwd = Root_FS;
+TerminalShell.pwd = Filesystem;
 
 TerminalShell.commands['cd'] = function(terminal, path) {
 	if (path in this.pwd) {
