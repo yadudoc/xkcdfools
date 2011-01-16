@@ -18,13 +18,13 @@ var xkcd = {
 	latest: null,
 	last: null,
 	cache: {},
-	base: '/',
+	base: 'http://dynamic.xkcd.com/api-0/jsonp/comic/',
 	
 	get: function(num, success, error) {
 		if (num == null) {
-			path = 'info.0.json';
+			path = '';
 		} else if (Number(num)) {
-			path = num+'/info.0.json';
+			path = String(num);
 		} else {
 			error(false);
 			return false;
@@ -36,7 +36,7 @@ var xkcd = {
 		} else {
 			return $.ajax({
 				url: this.base+path,
-				dataType: 'json',
+				dataType: 'jsonp',
 				success: $.proxy(function(data) {
 					this.last = this.cache[num] = data;
 					success(data);
@@ -153,7 +153,7 @@ TerminalShell.filters.push(function (terminal, cmd) {
 
 TerminalShell.commands['shutdown'] = TerminalShell.commands['poweroff'] = function(terminal) {
 	if (this.sudo) {
-		terminal.print('Broadcast message from guest@dotslash');
+		terminal.print('Broadcast message from guest@xkcd');
 		terminal.print();
 		terminal.print('The system is going down for maintenance NOW!');
 		return $('#screen').fadeOut();
@@ -180,20 +180,21 @@ TerminalShell.commands['restart'] = TerminalShell.commands['reboot'] = function(
 	}
 };
 
-function linkFile(FS) {
+function linkFile(url) {
 	return {type:'dir', enter:function() {
-		Filesystem = FS;
+		window.location = url;
 	}};
 }
 
 Filesystem = {
 	'welcome.txt': {type:'file', read:function(terminal) {
-		terminal.print($('<h4>').text('Welcome to the DotSlash console.'));
+		terminal.print($('<h4>').text('Welcome to the unixkcd console.'));
+		terminal.print('To navigate the comics, enter "next", "prev", "first", "last", "display", or "random".');
 		terminal.print('Use "ls", "cat", and "cd" to navigate the filesystem.');
 	}},
 	'license.txt': {type:'file', read:function(terminal) {
 		terminal.print($('<p>').html('Client-side logic for Wordpress CLI theme :: <a href="http://thrind.xamai.ca/">R. McFarland, 2006, 2007, 2008</a>'));
-		terminal.print($('<p>').html('jQuery rewrite and overhaul :: <a href="http://posterous.humanint.com">yadudoc, 2011</a>'));
+		terminal.print($('<p>').html('jQuery rewrite and overhaul :: <a href="http://www.chromakode.com/">Chromakode, 2010</a>'));
 		terminal.print();
 		$.each([
 			'This program is free software; you can redistribute it and/or',
@@ -214,40 +215,10 @@ Filesystem = {
 		});
 	}}
 };
-
-Events_FS = {
-	'.' : {type: 'file', read:function(terminal) {
-		terminal.print('Staying right here.');
-	}},	
-	'..' : {type: 'file', read:function(terminal){
-		terminal.print('Moving up to parent directory.');
-	}},
-	'Quiz.txt': {type:'file', read:function(terminal) {
-		terminal.print($('<h4>').text('Quiz.'));
-		terminal.print('Quiz desciption goes here.');
-		terminal.print('Heyyy :P.');
-	}},
-	'Googly.txt': {type:'file', read:function(terminal) {
-		terminal.print($('<p>').html('Googly : NOTE LINK IS MISSING:: <a href="http://posterous.humanint.com">yadudoc, 2011</a>'));
-		terminal.print();
-		$.each([
-		 'Erlang is a general-purpose programming language and',
-		 'runtime environment. Erlang has built-in support for',
-		 'concurrency, distribution and fault tolerance.',
-		 'Erlang is used in several large telecommunication ',
-		 'systems from Ericsson. Erlang is available as open ',
-		 ' source from http://www.erlang.org.'
-		], function(num, line) {
-			terminal.print(line);
-		});
-	}}	
-};
-
-//Filesystem['Events'] = linkFile('http://blag.xkcd.com');
-Filesystem['Events'] = linkFile(Events_FS);
-Filesystem['Workshops'] = linkFile('https://docs.google.com/document/d/169ibkoZqveAQoYulnZmAp2VNfqpS-XGR8szLJaDxG8k/edit?hl=en&authkey=CILeuasG');
-Filesystem['Sponsors'] = linkFile('http://www.google.com');
-Filesystem['Register'] = linkFile('http://www.google.com');
+Filesystem['blog'] = Filesystem['blag'] = linkFile('http://blag.xkcd.com');
+Filesystem['forums'] = Filesystem['fora'] = linkFile('http://forums.xkcd.com/');
+Filesystem['store'] = linkFile('http://store.xkcd.com/');
+Filesystem['about'] = linkFile('http://xkcd.com/about/');
 TerminalShell.pwd = Filesystem;
 
 TerminalShell.commands['cd'] = function(terminal, path) {
@@ -352,14 +323,13 @@ TerminalShell.commands['wget'] = TerminalShell.commands['curl'] = function(termi
 	}
 };
 
-// TODO - get the irc up n running
 TerminalShell.commands['write'] =
 TerminalShell.commands['irc'] = function(terminal, nick) {
 	if (nick) {
 		$('.irc').slideUp('fast', function() {
 			$(this).remove();
 		});
-		var url = "http://widget.mibbit.com/?server=irc.freenode.net&channel=%23cet";
+		var url = "http://widget.mibbit.com/?server=irc.foonetic.net&channel=%23xkcd";
 		if (nick) {
 			url += "&nick=" + encodeURIComponent(nick);
 		}
@@ -369,7 +339,6 @@ TerminalShell.commands['irc'] = function(terminal, nick) {
 	}
 };
 
-// TODO - change the links here to point to itself
 TerminalShell.commands['unixkcd'] = function(terminal, nick) {
 	TerminalShell.commands['curl'](terminal, "http://www.xkcd.com/unixkcd/");
 };
@@ -447,7 +416,7 @@ TerminalShell.commands['locate'] = function(terminal, what) {
 
 Adventure = {
 	rooms: {
-		0:{description:'You are at a computer using dotslash console.', exits:{west:1, south:10}},
+		0:{description:'You are at a computer using unixkcd.', exits:{west:1, south:10}},
 		1:{description:'Life is peaceful there.', exits:{east:0, west:2}},
 		2:{description:'In the open air.', exits:{east:1, west:3}},
 		3:{description:'Where the skies are blue.', exits:{east:2, west:4}},
@@ -553,7 +522,7 @@ TerminalShell.fallback = function(terminal, cmd) {
 		'date': 'March 32nd',
 		'hello': 'Why hello there!',
 		'who': 'Doctor Who?',
-		'dotslash': 'Yes?',
+		'xkcd': 'Yes?',
 		'su': 'God mode activated. Remember, with great power comes great ... aw, screw it, go have fun.',
 		'fuck': 'I have a headache.',
 		'whoami': 'You are Richard Stallman.',
@@ -594,7 +563,7 @@ TerminalShell.fallback = function(terminal, cmd) {
 		} else if  (cmd == "hint") {
 			terminal.print(randomChoice([
  				'We offer some really nice polos.',
- 				$('<p>').html('A similar terminal is available at <a href="http://xkcd.com/unixkcd/">http://xkcd.com/unixkcd/</a>'),
+ 				$('<p>').html('This terminal will remain available at <a href="http://xkcd.com/unixkcd/">http://xkcd.com/unixkcd/</a>'),
  				'Use the source, Luke!',
  				'There are cheat codes.'
  			]));
