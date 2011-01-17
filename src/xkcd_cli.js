@@ -224,12 +224,48 @@ function linkFile(url) {
 	   }};
    }
 
-  Event_FS = {
-		  'quiz.txt': {type:'file', read:function(terminal) {	
-	  terminal.print($('<h4>').text('yay quiz.'));
-		  terminal.print('Blah Blah Blah Blah Blah Blah Blah Blah');
-		  terminal.print(' Blah Blah Blah Blah Blah');
-	  }},
+  Event_FS = {		  
+	  'function_a_la_carte.txt': {type:'file', read:function(terminal) {		
+		terminal.print($('<h3>').text('FUNCTION\' A LA CARTE'));	
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Description'));	
+		  $.each([
+					'Shortcuts?? Not anymore!! Lets go back to the basics. Pre-defined functions has',
+					'made programming easier & us, programmers lazier. So, its time to shirk that off &',
+					'get back to the basics. Primitive is the flavour of the season!! Being programmers, we',
+					'are obliged to be familiar with their implementations. Fun with Functions does just',
+					'that!!!		  '
+		  ], function(num, line) {
+			  terminal.print(line);
+		  });
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Rules'));	  
+		terminal.print($('<p>').text('# A maximum of 2 members are allowed in a team.'));
+		terminal.print($('<p>').text('# Decision of judges will be final and binding.'));
+		
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Format'));	  
+		terminal.print($('<p>').text('# Event tests your acquaintance with the basic functions.'));
+		terminal.print($('<p>').text('# Prelims consists of questions pertinent to functions. It will be of 30 mins duration.'));
+		terminal.print($('<p>').text('# Finals are conducted in 2 rounds :'));		
+		$.each([
+				'1st round – The contestants will be asked to code in a functional programming',
+				'language with the help of a manual provided at the time of the test.',
+				'2nd round – Expect questions regarding the implementation of some pre-defined',
+				'functions like strcpy() , strstr() , etc.	  '
+		  ], function(num, line) {
+			  terminal.print(line);
+		  });
+
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Prize'));	  
+		terminal.print($('<p>').text('Will be announced soon'));
+
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Coordinators'));	  
+		terminal.print($('<p>').text('Will be updated soon'));
+
+		}},
 	  'googly.txt': {type:'file', read:function(terminal) {
 		  terminal.print($('<p>').html('Client-side logic for Wordpress CLI theme :: <a href="http://thrind.xamai.ca/">R. McFarland, 2006, 2007, 2008</a>'));
 		  //terminal.print($('<p>').html('jQuery rewrite and overhaul :: <a href="http://www.chromakode.com/">Chromakode, 2010</a>'));
