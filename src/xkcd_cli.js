@@ -895,7 +895,7 @@ TerminalShell.commands['cat'] = function(terminal, path) {
 			terminal.print($('<p>').addClass('error').text('cat: "'+path+'": No such file or directory.'));
 			terminal.setWorking(false);
 		}); */
-	} else {
+	 else {
 		terminal.print('You\'re a kitty!');
 	}
 };
