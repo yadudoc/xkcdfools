@@ -225,8 +225,9 @@ function linkFile(url) {
    }
 
   Event_FS = {		  
-	  'function_a_la_carte.txt': {type:'file', read:function(terminal) {		
-		terminal.print($('<h3>').text('FUNCTION\' A LA CARTE'));	
+	  'a_la_carte': {type:'file', read:function(terminal) {		
+			
+		terminal.print($('<h3>').text('FUNCTION À LA CARTE'));	
 		terminal.print($('<br/>').text(''));
 		terminal.print($('<h4>').text('Description'));	
 		  $.each([
@@ -264,30 +265,411 @@ function linkFile(url) {
 		terminal.print($('<br/>').text(''));
 		terminal.print($('<h4>').text('Coordinators'));	  
 		terminal.print($('<p>').text('Will be updated soon'));
-
 		}},
-	  'googly.txt': {type:'file', read:function(terminal) {
-		  terminal.print($('<p>').html('Client-side logic for Wordpress CLI theme :: <a href="http://thrind.xamai.ca/">R. McFarland, 2006, 2007, 2008</a>'));
-		  //terminal.print($('<p>').html('jQuery rewrite and overhaul :: <a href="http://www.chromakode.com/">Chromakode, 2010</a>'));
-		  terminal.print();
+	  
+	  'step_by_step': {type:'file', read:function(terminal) {		
+			
+		terminal.print($('<h3>').text('STEP BY STEP CODING'));	
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Description'));	
 		  $.each([
-			  'This program is free software; you can redistribute it and/or',
-			  'modify it under the terms of the GNU General Public License',
-			  'as published by the Free Software Foundation; either version 2',
-			  'of the License, or (at your option) any later version.',
-			  '',
-			  'This program is distributed in the hope that it will be useful,',
-			  'but WITHOUT ANY WARRANTY; without even the implied warranty of',
-			  'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the',
-			  'GNU General Public License for more details.',
-			  '',
-			  'You should have received a copy of the GNU General Public License',
-			  'along with this program; if not, write to the Free Software',
-			  'Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.'
+		  		'Its is like the greek version of the ‘Amazing Race’. Every task ',
+		  		'takes you to the next level, which opens up a greater challenge.',
+		  		'Get ready to set your coding skills ablaze and test your ',
+		  		'adaptability to dynamic requirements.',
+		  		' Reach the zenith, one step at a time.'
 		  ], function(num, line) {
 			  terminal.print(line);
 		  });
-	  }}
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Rules'));	  
+		terminal.print($('<p>').text('# A maximum of 2 members are allowed in a team.'));
+		terminal.print($('<p>').text('# Decision of judges will be final and binding.'));
+		
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Format'));	  
+		terminal.print($('<p>').text('#Prelims comprise of C/C++ coding and debugging questions. It will be of 30 mins duration.'));
+		terminal.print($('<p>').text('#Initially, each shortlisted team will be given a problem to solve. At equal intervals, they will be asked to incorporate an additional functionality to the solution.'));		
+		$.each([
+		'Eg:- A team is required to implement a car showroom, which initially deals only with',
+		'selling cars. Later, they decide to open a new section, concerned with purchase of',
+		'used cars and subsequently plan to provide Rent-a-car facility.',
+		'If more than one team succeeds in completing the entire (most) set of tasks, it results',
+		'in a tie, in which case the efficiency in implementation will be the criterion for',
+		'deciding the winner.'
+		  ], function(num, line) {
+			  terminal.print(line);
+		  });
+
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Prize'));	  
+		terminal.print($('<p>').text('Will be announced soon'));
+
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Coordinators'));	  
+		terminal.print($('<p>').text('Will be updated soon'));
+		}},
+		
+		'parallel': {type:'file', read:function(terminal) {		
+			
+		terminal.print($('<h3>').text('PARALLEL PROGRAMMING'));	
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Description'));	
+		  $.each([		  
+		  '‘ALL THE WORLD’S A STAGE & ALL THE MEN AND WOMENS MEARLY',
+			'PLAYERS’. Applies to coding too. The stage is set for parallel programming and',
+			'individual member a role. The idea is ‘three brains work better than one’. And that is',
+			'your task make the amalgamation work!! ',
+			'Set the stage to find out the team with the best coordination and coding prowess.'		  
+		  ], function(num, line) {
+			  terminal.print(line);
+		  });
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Rules'));	  
+		terminal.print($('<p>').text('# A maximum of 3 members are allowed in a team.'));
+		terminal.print($('<p>').text('# Teams will not be allowed to sit together in the finals'));
+		terminal.print($('<p>').text('# The time limits set for this event will be observed strictly.'));
+		terminal.print($('<p>').text('# Any team taking more time than the time allotted to them will be disqualified'));
+		terminal.print($('<p>').text('# Members of a teams will not be allowed to communicate with each other after the discussion time is over.'));
+		terminal.print($('<p>').text('# Each member of the team can take note of the portion of the program that he has planned to complete.'));
+		
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Format'));	  
+		$.each([
+		'Prelims – Expect questions, covering various aspects in C/C++ programming.',
+		'A problem will be assigned to the team at first. The team members can discuss for a',
+		'maximum of 5 minutes. Then, each member has to code a preplanned portion',
+		'(function, class or like) of the bigger program in parallel. After the stipulated time,',
+		'one member of the group is required to combine their code snippets into a single',
+		'program that compiles successfully to give the desired output.',
+		'The coordinators will transfer the individual code snippets into a single system after',
+		'which one member of the team can integrate the program.',
+		'Marks will be awarded depending on the clarity of the output, coordination between',
+		'the team members, time taken and algorithm used.'
+		  ], function(num, line) {
+			  terminal.print(line);
+		  });
+
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Prize'));	  
+		terminal.print($('<p>').text('Will be announced soon'));
+
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Coordinators'));	  
+		terminal.print($('<p>').text('Will be updated soon'));
+		}},
+	  
+	  'web_designing': {type:'file', read:function(terminal) {		
+			
+		terminal.print($('<h3>').text('WEB DESIGNING AND DEVELOPMENT'));	
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Description'));	
+		  $.each([
+		  'The ‘World Wide Web’ is one of the greatest inventions of the modern era and still',
+			'evolving. Carve your niche in it.',
+			'Creativity clubbed with technical know how. Prove your mettle in an outstanding test',
+			'of creativity in an effort to capture minds with your enticing designs. Bring out the',
+			'artist you. Let your imagination take flight!!'
+		  ], function(num, line) {
+			  terminal.print(line);
+		  });
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Rules'));	  
+		terminal.print($('<p>').text('# A maximum of 2 members are allowed in a team.'));
+		terminal.print($('<p>').text('# Use of pen drives or any external data or scripts will lead to disqualification.'));
+		terminal.print($('<p>').text('# Decision of judges will be final and binding.'));
+		
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Format'));	  
+		terminal.print($('<p>').text('# There are no preliminary rounds for this event.'));
+		terminal.print($('<p>').text('# The contestants will have to design a web page consisting of 4-6 pages and a logo based on the topic given.'));
+		terminal.print($('<p>').text('# Available softwares - Dreamweaver, Flash and Photoshop Jquery will be available.'));
+		terminal.print($('<p>').text('# Internet connectivity will not be provided.'));
+		terminal.print($('<p>').text('# Skill and creativity in the design of the pages and logo will be the main criteria for selection.'));
+		terminal.print($('<p>').text('# Knowledge of xhtml, php will be helpful.'));
+		terminal.print($('<p>').text('# Stock images or videos will be provided.'));
+		
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Prize'));	  
+		terminal.print($('<p>').text('Will be announced soon'));
+
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Coordinators'));	  
+		terminal.print($('<p>').text('Will be updated soon'));
+		}},
+	 
+	  'papers': {type:'file', read:function(terminal) {		
+			
+		terminal.print($('<h3>').text('PAPER PRESENTATION'));	
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Description'));	
+		  $.each([
+					'A small idea is the birthplace of great accomplishments. Everything begins with an idea.',
+					'This is an avenue to put forward yours. Do you have the courage to speak out, the power',
+					'to transcend your opponents in reaching out to your listeners, then you have come to the',
+					'right place - A test of presentation skills, body language and vocabulary.'
+		  ], function(num, line) {
+			  terminal.print(line);
+		  });
+		  		  
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Rules'));	  
+		terminal.print($('<p>').text('# The paper shall have a max of 2 authors.'));
+		terminal.print($('<p>').text('# A team can present only a single paper of their choice.'));
+		terminal.print($('<p>').text('# The abstract should be sent on or before 15th Feb.'));
+		terminal.print($('<p>').text('# The decision of the judges would be final.'));
+		
+		
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Format'));	  		
+		$.each([
+		'Each team is assigned a maximum of 20 mins, in which the first 15 mins is alloted for',
+		'presentation and the remaining 5 mins is left to Q&A.',
+		'Each team can select from the following topics :',
+		'• Cloud computing',
+		'• Networking',
+		'• Architectures (many core, multi-threading etc ..)',
+		'• Cryptography',
+		'• Bio-informatics',
+		'• Mobile computing',
+		'• Artificial Intelligence',
+		'• Green computing',
+		'• Other topics will also be considered.'
+		  ], function(num, line) {
+			  terminal.print(line);
+		  });
+
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Prize'));	  
+		terminal.print($('<p>').text('Will be announced soon'));
+
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Coordinators'));	  
+		terminal.print($('<p>').text('Will be updated soon'));
+		}},
+	  
+	  'tech_quiz': {type:'file', read:function(terminal) {		
+			
+		terminal.print($('<h3>').text('TECHNICAL QUIZ'));	
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Description'));	
+		terminal.print($('<p>').text('Compete with the brightest minds and rate yourself in the ultimate quizzing challenge.'));
+		  
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Rules'));	  
+		terminal.print($('<p>').text('# A maximum of 2 members are allowed in a team.'));
+		terminal.print($('<p>').text('# In case of any ambiguities or discrepancies the decision of the Quiz Master will be final.'));
+		
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Format'));	  
+		terminal.print($('<p>').text('# All participants have to appear for a preliminary round from which only 6 teams will qualify for the final.'));
+		terminal.print($('<p>').text('# The shortlisted contestants can expect questions mostly from the recent trends in the field of computer science.'));
+		
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Prize'));	  
+		terminal.print($('<p>').text('Will be announced soon'));
+
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Coordinators'));	  
+		terminal.print($('<p>').text('Will be updated soon'));
+		}},
+		
+		'googly': {type:'file', read:function(terminal) {		
+			
+		terminal.print($('<h3>').text('GOOGLY'));	
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Description'));	
+		  $.each([
+					'Some things man was never meant to know. For everything else there is google!!',
+					'Do you think googling is easy.. Then this event is for you...'
+		  ], function(num, line) {
+			  terminal.print(line);
+		  });
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Rules'));	  
+		terminal.print($('<p>').text('# A maximum of 2 members are allowed in a team.'));
+		terminal.print($('<p>').text('# Teams will have to produce the exact reproduction of the question that is given to them from the internet.'));
+		
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Format'));	  
+		$.each([
+			'There will be no prelims.',
+			'All teams will be given questions with varying difficulty.',
+			'Questions will have marks assigned to them',
+			'Team with the maximum marks will be declared the winner.',
+			'In case of a tie, a tie breaker question will be given to the tied teams.',
+			'The event will be conducted in 1 hour.'
+		  ], function(num, line) {
+			  terminal.print(line);
+		  });
+
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Prize'));	  
+		terminal.print($('<p>').text('Will be announced soon'));
+
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Coordinators'));	  
+		terminal.print($('<p>').text('Will be updated soon'));
+		}},
+		
+		'treasure_hunt': {type:'file', read:function(terminal) {		
+			
+		terminal.print($('<h3>').text('TREASURE HUNT'));	
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Description'));	
+		  $.each([
+					'Be ready to think wild and experience the most grueling hunt for treasure.',
+					'Your hunt for the virtual treasure and waltz of the glory.On our end,we assure you,',
+					'we’ll open pandora’s box'
+		  ], function(num, line) {
+			  terminal.print(line);
+		  });
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Rules'));	  
+		terminal.print($('<p>').text('Will be updated soon'));
+		
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Prize'));	  
+		terminal.print($('<p>').text('Will be announced soon'));
+
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Coordinators'));	  
+		terminal.print($('<p>').text('Will be updated soon'));
+		}},
+		
+		'dalal_bull': {type:'file', read:function(terminal) {		
+			
+		terminal.print($('<h3>').text('DALAL BULL'));	
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Description'));	
+		  $.each([
+				'Bulls & Bears. Ask & Bid. Brokers. Dow Jones .Blue chips & Book values.If this dosent',
+				'sound like a random gibberish to you,’dalal bull’ is the arena for you',
+				'Wanna try your luck in the stock markets. Then start off by laying your hands on “ “',
+				', the virtual stock exchange.'
+		  ], function(num, line) {
+			  terminal.print(line);
+		  });
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Rules'));	  
+		terminal.print($('<p>').text('Will be updated soon'));
+		
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Prize'));	  
+		terminal.print($('<p>').text('Will be announced soon'));
+
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Coordinators'));	  
+		terminal.print($('<p>').text('Will be updated soon'));
+		}},
+		
+		'math_quiz': {type:'file', read:function(terminal) {		
+			
+		terminal.print($('<h3>').text('ONLINE MATH QUIZ'));	
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Description'));	
+		  $.each([
+					'You thought it was all about zeros and ones ??',
+					'We move ahead.To what according to many ,rules the world.Pure,un-udultered',
+					'mathematics.For those out there ,who are mavericks with number,come in,get down &',
+					'dirty!!',
+					'Test your savvy in the amazing world of mathematics.'
+		  ], function(num, line) {
+			  terminal.print(line);
+		  });
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Rules'));	  
+		terminal.print($('<p>').text('Will be updated soon'));
+		
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Format'));	  
+		terminal.print($('<p>').text('Will be updated soon'));
+
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Prize'));	  
+		terminal.print($('<p>').text('Will be announced soon'));
+
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Coordinators'));	  
+		terminal.print($('<p>').text('Will be updated soon'));
+		}},
+		
+		'gaming': {type:'file', read:function(terminal) {		
+						
+		terminal.print($('<h3>').text('GAMING'));	
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Description'));	
+		  $.each([
+					'Will be updated soon !'					
+		  ], function(num, line) {
+			  terminal.print(line);
+		  });
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Rules'));	  
+		terminal.print($('<p>').text('Will be updated soon !'));
+		
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Format'));	  
+		terminal.print($('<p>').text('Will be updated soon !'));
+		
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Prize'));	  
+		terminal.print($('<p>').text('Will be announced soon'));
+
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Coordinators'));	  
+		terminal.print($('<p>').text('Will be updated soon'));
+		}},
+				
+		'system_treasure': {type:'file', read:function(terminal) {		
+			
+		terminal.print($('<h3>').text('SYSTEM TREASURE HUNT'));	
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Description'));	
+		  $.each([
+		  	'Unravel the mystery by treading through queer and treacherous paths where a single',
+				'decision can make a substantial difference !!!',
+				'The treasure is hidden in the computer network.',
+				'Use your computer skills to find out the treasure..'				
+		  ], function(num, line) {
+			  terminal.print(line);
+		  });
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Rules'));	  
+		terminal.print($('<p>').text('Will be updated soon !'));
+		
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Format'));	  
+		terminal.print($('<p>').text('Will be updated soon !'));
+
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Prize'));	  
+		terminal.print($('<p>').text('Will be announced soon'));
+
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Coordinators'));	  
+		terminal.print($('<p>').text('Will be updated soon'));
+		}},
+		
+		'informals': {type:'file', read:function(terminal) {		
+			
+		terminal.print($('<h3>').text('INFORMAL EVENTS'));	
+		terminal.print($('<br/>').text(''));
+		terminal.print($('<h4>').text('Description'));	
+		  $.each([
+		  	'Informal Events:',
+				'1) Man of the series - WAP to complete a number series',
+				'2) Tech word hunt - like crosswords, tech dumb c,',
+				'3) Photography',
+				'4) Rubik’s Cube Solving',
+				'5) Fastest texter - fast typing in mobile phone',
+				'6) Type Master - faster typer using qwerty',
+				'7) Reverse Chess',
+				'     And many more exciting events……'
+		  ], function(num, line) {
+			  terminal.print(line);
+		  });
+		}},
   };
 
 	Workshop_FS = {
@@ -421,8 +803,8 @@ function linkFile(url) {
 		  terminal.print('Yaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaay');
 		  terminal.print('Most unix commands work (un)usually. ');
 	  }},
-	  'license.txt': {type:'file', read:function(terminal) {
-		  terminal.print($('<p>').html('Client-side logic for Wordpress CLI theme :: <a href="http://thrind.xamai.ca/">R. McFarland, 2006, 2007, 2008</a>'));
+	  'yadu': {type:'file', read:function(terminal) {
+		  terminal.print($('<p>').html('none'));
 		  terminal.print($('<p>').html('jQuery rewrite and overhaul :: <a href="http://posterous.humanint.com/">yadudoc, 2011</a> and <a href="http://simula67.wordpress.com/">simula67, 2011</a>'));
 		terminal.print();
 		$.each([
@@ -444,7 +826,9 @@ function linkFile(url) {
 		});
 	}}
 };
+  Contacts_FS['yadunand'] = linkFile('http://posterous.humanint.com');
   
+ 
   Filesystem = {
 	  'welcome.txt': {type:'file', read:function(terminal) {	
 	  terminal.print($('<h4>').text('Welcome to the dotslash console.'));
