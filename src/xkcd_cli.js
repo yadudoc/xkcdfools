@@ -673,30 +673,30 @@ function linkFile(url) {
   };
 
 	Workshop_FS = {
-	  'workshop.txt': {type:'file', read:function(terminal) {	
-	  terminal.print($('<h4>').text('Welcome to the workshop file.'));
-		  //terminal.print('To navigate the system, enter "next", "prev", "first", "last", "display", or "random".');
-		  terminal.print('Use "ls", "cat", and "cd" to navigate the filesystem.');
-		  terminal.print('Most unix commands work (un)usually. ');
-	  }},
-	  'license.txt': {type:'file', read:function(terminal) {
-		  terminal.print($('<p>').html('Client-side logic for Wordpress CLI theme :: <a href="http://thrind.xamai.ca/">R. McFarland, 2006, 2007, 2008</a>'));
-		  terminal.print($('<p>').html('jQuery rewrite and overhaul :: <a href="http://posterous.humanint.com/">yadudoc, 2011</a> and <a href="http://simula67.wordpress.com/">simula67, 2011</a>'));
+	  'workshop': {type:'file', read:function(terminal) {	
+	  	terminal.print($('<h3>').text('Welcome to '));
+	  
 		terminal.print();
-		$.each([
-			'This program is free software; you can redistribute it and/or',
-			'modify it under the terms of the GNU General Public License',
-			'as published by the Free Software Foundation; either version 2',
-			'of the License, or (at your option) any later version.',
-			'',
-			'This program is distributed in the hope that it will be useful,',
-			'but WITHOUT ANY WARRANTY; without even the implied warranty of',
-			'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the',
-			'GNU General Public License for more details.',
-			'',
-			'You should have received a copy of the GNU General Public License',
-			'along with this program; if not, write to the Free Software',
-			'Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.'
+		$.each([			                                                                           
+			'  /                             /           /##                             ',
+			'#/                            #/          #/ ###                            ',
+			'##                            ##         ##   ###                     #     ',
+			'##                            ##         ##                          ##     ',
+			'##                            ##         ##                          ##     ',
+			'##  /##      /###     /###    ##  /##    ###### /##       /###     ######## ',
+			'## / ###    / ###  / / ###  / ## / ###   ##### / ###     / #### / ########  ',
+			'##/   ###  /   ###/ /   ###/  ##/   /    ##   /   ###   ##  ###/     ##     ',
+			'##     ## ##    ## ##         ##   /     ##  ##    ### ####          ##     ',
+			'##     ## ##    ## ##         ##  /      ##  ########    ###         ##     ',
+			'##     ## ##    ## ##         ## ##      ##  #######       ###       ##     ',
+			'##     ## ##    ## ##         ######     ##  ##              ###     ##     ',
+			'##     ## ##    /# ###     /  ##  ###    ##  ####    /  /###  ##     ##     ',
+			'##     ##  ####/ ## ######/   ##   ### / ##   ######/  / #### /      ##     ',
+			' ##    ##   ###   ## #####     ##   ##/   ##   #####      ###/        ##    ',
+			'       /                                                                    ',
+			'      /                                                                     ',
+			'     /                                                                      ',
+			'    /  '
 		], function(num, line) {
 			terminal.print(line);
 		});
@@ -1274,25 +1274,18 @@ $(document).ready(function() {
 		}, noData);*/
 		    
 		   
-		 $.each([		 
-'      ##                       /       ### ###                        #/        ',
-'      ##                #     /         ##  ##                        ##        ',
-'      ##               ##     ##        #   ##                        ##        ',
-'      ##               ##      ###          ##                        ##        ',
-'  ### ##    /###     ######## ## ###        ##      /###      /###    ##  /##   ',
-' ######### / ###  / ########   ### ###      ##     / ###  /  / #### / ## / ###  ',
-'##   #### /   ###/     ##        ### ###    ##    /   ###/  ##  ###/  ##/   ### ',
-'##    ## ##    ##      ##          ### /##  ##   ##    ##  ####       ##     ## ',
-'##    ## ##    ##      ##            #/ /## ##   ##    ##    ###      ##     ## ',
-'##    ## ##    ##      ##             #/ ## ##   ##    ##      ###    ##     ## ',
-'##    ## ##    ##      ##              # /  ##   ##    ##        ###  ##     ## ',
-'##    /# ##    ##      ##    /##        /   ##   ##    /#   /###  ##  ##     ## ',
-' ####/    ######       ##   /  ########/    ### / ####/ ## / #### /   ##     ## ',
-'  ###      ####         ## /     #####       ##/   ###   ##   ###/     ##    ## ',
-'                           |                                                 /  ',
-'                            \\)                                              /   ',
-'                                                                           /    ',
-'                                                                          /     '
+		 $.each([		
+		 
+                                                                                     
+'         88                                  88                         88           ',
+'         88                ,d                88                         88           ',
+'         88                88                88                         88           ',
+' ,adPPYb,88   ,adPPYba,  MM88MMM  ,adPPYba,  88  ,adPPYYba,  ,adPPYba,  88,dPPYba,   ',
+'a8"    `Y88  a8"     "8a   88     I8[    ""  88  ""     `Y8  I8[    ""  88P\'    "8a  ',
+'8b       88  8b       d8   88      `"Y8ba,   88  ,adPPPPP88   `"Y8ba,   88       88  ',
+'"8a,   ,d88  "8a,   ,a8"   88,    aa    ]8I  88  88,    ,88  aa    ]8I  88       88  ',
+' `"8bbdP"Y8   `"YbbdP"\'    "Y888  `"YbbdP"\'  88  `"8bbdP"Y8  `"YbbdP"\'  88       88  ',
+''
 ], function(num, line) {
 			Terminal.print(line);
 		});                                                                               
