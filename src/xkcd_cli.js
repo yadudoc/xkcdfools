@@ -797,6 +797,7 @@ function linkFile(url) {
 	  terminal.print($('<h4>').text('Welcome to the dotslash console.'));
 		  //terminal.print('To navigate the system, enter "next", "prev", "first", "last", "display", or "random".');
 		  terminal.print('Use "ls", "cat", and "cd" to navigate the filesystem.');
+		  terminal.print('Use "help" command for a list of common usages.');
 		  terminal.print('Most unix commands work (un)usually. ');
 	  }},
 	  'license.txt': {type:'file', read:function(terminal) {
@@ -959,7 +960,8 @@ TerminalShell.commands['irc'] = function(terminal, nick) {
 		$('.irc').slideUp('fast', function() {
 			$(this).remove();
 		});
-		var url = "http://widget.mibbit.com/?server=irc.foonetic.net&channel=%23xkcd";
+		// edit TODO
+	        var url = "http://widget.mibbit.com/?settings=99509cab0139cd1d42552b39d0ff6784&server=irc.mibbit.net&channel=%23dotslash&hashtag=%23dotslash";
 		if (nick) {
 			url += "&nick=" + encodeURIComponent(nick);
 		}
@@ -1136,8 +1138,22 @@ TerminalShell.commands['sleep'] = function(terminal, duration) {
 };
 
 // No peeking!
+// more edits to go here.
 TerminalShell.commands['help'] = TerminalShell.commands['halp'] = function(terminal) {
-	terminal.print('That would be cheating!');
+	terminal.print($('<h4>').html('Basic help page: Common commands and usages'));	
+	terminal.print('');
+	terminal.print('"ls" : list files in the current directory');
+	terminal.print('"cd \<dir\>" : change directory to the new directory');
+	terminal.print('"cd .." : moves to the parent directory');
+	terminal.print('"cat \<file\>" : prints out the contents of a file');
+	terminal.print('"help" : for this help file');
+	terminal.print('"irc \<nick\> : Log into irc and chat live with online friends');
+	terminal.print('');
+	terminal.print($('<h4>').html('Basically every other unix command works and we have extras, Like'));
+	terminal.print('sudo       su       rm       man        whoami');
+	terminal.print('who        wget     light    sleep      locate');	
+	terminal.print('shutdown   logout   exit     quit       goto');
+	terminal.print('apt-get    cheat     ');
 }; 
 
 TerminalShell.fallback = function(terminal, cmd) {
