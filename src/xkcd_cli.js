@@ -1151,9 +1151,9 @@ TerminalShell.commands['help'] = TerminalShell.commands['halp'] = function(termi
 	terminal.print('');
 	terminal.print($('<h4>').html('Basically every other unix command works and we have extras, Like'));
 	terminal.print('sudo       su       rm       man        whoami');
-	terminal.print('who        wget     light    sleep      locate');	
+	terminal.print('who        cheat    light    sleep      locate');	
 	terminal.print('shutdown   logout   exit     quit       goto');
-	terminal.print('apt-get    cheat     ');
+	terminal.print('And undocumented ones left for the users\' curiosity');
 }; 
 
 TerminalShell.fallback = function(terminal, cmd) {
