@@ -10,6 +10,8 @@ Tonnes of thanks to Chromacode for having the source for
 free :)
 Thanks to Simula67 for helping me out when google wasn't
 enough. 
+Thanks to http://patorjk.com/software/taag/ for the ascii 
+art that we love so much 
 And even more for the asses who did the site to resemble
 windows - and piss me off, LOL :
 
