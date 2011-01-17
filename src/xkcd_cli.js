@@ -185,42 +185,85 @@ function linkFile(url) {
 	}};
 }
 
-function dirFile(dirname) {
-    return {type:'dir', enter:function() {
-						if ( dirname == 'events' ){			
-		 	TerminalShell.pwd = Event_FS;
-		 	Terminal.config.prompt = 'guest@dotSlash:/events$';
-		 	Terminal.updateInputDisplay(); 
-	 		}else if ( dirname == 'workshops'){
-				// edit
-				Terminal.config.prompt = 'guest@dotSlash:/workshops$';
-			}else if ( dirname == 'sponsors'){
-				// edit
-				Terminal.config.prompt = 'guest@dotSlash:/sponsors$';
-			}else if ( dirname == 'register'){
-				// edit
-				Terminal.config.prompt = 'guest@dotSlash:/register$';
-			}else if ( dirname == 'about'){
-				// edit
-				Terminal.config.prompt = 'guest@dotSlash:/about$';
-			}else if ( dirname == 'contacts'){
-				// edit
-				Terminal.config.prompt = 'guest@dotSlash:/contacts$';
-			}else{
-			}
-		
-	}};
-}
+ function dirFile(dirname) {
+     return {type:'dir', enter:function() {
+			       if ( dirname == 'events' ){			
+			   		TerminalShell.pwd = Event_FS;
+			   		Terminal.config.prompt = 'guest@dotSlash:/events$';
+			   		Terminal.updateInputDisplay(); 
+			   }else if ( dirname == 'workshops'){
+				   // edit
+				   	TerminalShell.pwd = Workshop_FS;
+				 		Terminal.config.prompt = 'guest@dotSlash:/workshops$';
+				 		Terminal.updateInputDisplay(); 
+			   }else if ( dirname == 'sponsors'){
+				   // edit
+				   TerminalShell.pwd = Sponsors_FS;
+				   Terminal.config.prompt = 'guest@dotSlash:/sponsors$';
+				   Terminal.updateInputDisplay(); 
+			   }else if ( dirname == 'register'){
+				   // edit
+				   TerminalShell.pwd = Register_FS;
+				   Terminal.config.prompt = 'guest@dotSlash:/register$';
+				   Terminal.updateInputDisplay(); 
+			   }else if ( dirname == 'about'){
+				   // edit
+				   TerminalShell.pwd = About_FS;
+				   Terminal.config.prompt = 'guest@dotSlash:/about$';
+				   Terminal.updateInputDisplay(); 
+			   }else if ( dirname == 'contacts'){
+				   // edit
+				   TerminalShell.pwd = Contacts_FS;
+				   Terminal.config.prompt = 'guest@dotSlash:/contacts$';
+				   Terminal.updateInputDisplay(); 
+			   }else{
+					 Terminal.config.prompt = 'seriously_fucked$';
+					 Terminal.updateInputDisplay();
+			   }
 
-Event_FS = {
-		'quiz.txt': {type:'file', read:function(terminal) {	
-	terminal.print($('<h4>').text('yay quiz.'));
-		terminal.print('Blah Blah Blah Blah Blah Blah Blah Blah');
-		terminal.print(' Blah Blah Blah Blah Blah');
-	}},
-	'googly.txt': {type:'file', read:function(terminal) {
-		terminal.print($('<p>').html('Client-side logic for Wordpress CLI theme :: <a href="http://thrind.xamai.ca/">R. McFarland, 2006, 2007, 2008</a>'));
-		//terminal.print($('<p>').html('jQuery rewrite and overhaul :: <a href="http://www.chromakode.com/">Chromakode, 2010</a>'));
+	   }};
+   }
+
+  Event_FS = {
+		  'quiz.txt': {type:'file', read:function(terminal) {	
+	  terminal.print($('<h4>').text('yay quiz.'));
+		  terminal.print('Blah Blah Blah Blah Blah Blah Blah Blah');
+		  terminal.print(' Blah Blah Blah Blah Blah');
+	  }},
+	  'googly.txt': {type:'file', read:function(terminal) {
+		  terminal.print($('<p>').html('Client-side logic for Wordpress CLI theme :: <a href="http://thrind.xamai.ca/">R. McFarland, 2006, 2007, 2008</a>'));
+		  //terminal.print($('<p>').html('jQuery rewrite and overhaul :: <a href="http://www.chromakode.com/">Chromakode, 2010</a>'));
+		  terminal.print();
+		  $.each([
+			  'This program is free software; you can redistribute it and/or',
+			  'modify it under the terms of the GNU General Public License',
+			  'as published by the Free Software Foundation; either version 2',
+			  'of the License, or (at your option) any later version.',
+			  '',
+			  'This program is distributed in the hope that it will be useful,',
+			  'but WITHOUT ANY WARRANTY; without even the implied warranty of',
+			  'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the',
+			  'GNU General Public License for more details.',
+			  '',
+			  'You should have received a copy of the GNU General Public License',
+			  'along with this program; if not, write to the Free Software',
+			  'Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.'
+		  ], function(num, line) {
+			  terminal.print(line);
+		  });
+	  }}
+  };
+
+	Workshop_FS = {
+	  'workshop.txt': {type:'file', read:function(terminal) {	
+	  terminal.print($('<h4>').text('Welcome to the workshop file.'));
+		  //terminal.print('To navigate the system, enter "next", "prev", "first", "last", "display", or "random".');
+		  terminal.print('Use "ls", "cat", and "cd" to navigate the filesystem.');
+		  terminal.print('Most unix commands work (un)usually. ');
+	  }},
+	  'license.txt': {type:'file', read:function(terminal) {
+		  terminal.print($('<p>').html('Client-side logic for Wordpress CLI theme :: <a href="http://thrind.xamai.ca/">R. McFarland, 2006, 2007, 2008</a>'));
+		  terminal.print($('<p>').html('jQuery rewrite and overhaul :: <a href="http://posterous.humanint.com/">yadudoc, 2011</a> and <a href="http://simula67.wordpress.com/">simula67, 2011</a>'));
 		terminal.print();
 		$.each([
 			'This program is free software; you can redistribute it and/or',
@@ -241,17 +284,141 @@ Event_FS = {
 		});
 	}}
 };
-	
-Filesystem = {
-	'welcome.txt': {type:'file', read:function(terminal) {	
-	terminal.print($('<h4>').text('Welcome to the dotslash console.'));
-		//terminal.print('To navigate the system, enter "next", "prev", "first", "last", "display", or "random".');
-		terminal.print('Use "ls", "cat", and "cd" to navigate the filesystem.');
-		terminal.print('Most unix commands work (un)usually. ');
-	}},
-	'license.txt': {type:'file', read:function(terminal) {
-		terminal.print($('<p>').html('Client-side logic for Wordpress CLI theme :: <a href="http://thrind.xamai.ca/">R. McFarland, 2006, 2007, 2008</a>'));
-		terminal.print($('<p>').html('jQuery rewrite and overhaul :: <a href="http://www.chromakode.com/">Chromakode, 2010</a>'));
+
+	Sponsors_FS = {
+	  'sponsors.txt': {type:'file', read:function(terminal) {	
+	  terminal.print($('<h4>').text('Welcome to the sponsors file.'));
+		  //terminal.print('To navigate the system, enter "next", "prev", "first", "last", "display", or "random".');
+		  terminal.print('Use "ls", "cat", and "cd" to navigate the filesystem.');
+		  terminal.print('Most unix commands work (un)usually. ');
+	  }},
+	  'license.txt': {type:'file', read:function(terminal) {
+		  terminal.print($('<p>').html('Client-side logic for Wordpress CLI theme :: <a href="http://thrind.xamai.ca/">R. McFarland, 2006, 2007, 2008</a>'));
+		  terminal.print($('<p>').html('jQuery rewrite and overhaul :: <a href="http://posterous.humanint.com/">yadudoc, 2011</a> and <a href="http://simula67.wordpress.com/">simula67, 2011</a>'));
+		terminal.print();
+		$.each([
+			'This program is free software; you can redistribute it and/or',
+			'modify it under the terms of the GNU General Public License',
+			'as published by the Free Software Foundation; either version 2',
+			'of the License, or (at your option) any later version.',
+			'',
+			'This program is distributed in the hope that it will be useful,',
+			'but WITHOUT ANY WARRANTY; without even the implied warranty of',
+			'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the',
+			'GNU General Public License for more details.',
+			'',
+			'You should have received a copy of the GNU General Public License',
+			'along with this program; if not, write to the Free Software',
+			'Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.'
+		], function(num, line) {
+			terminal.print(line);
+		});
+	}}
+};
+  
+  Register_FS = {
+	  'welcome.txt': {type:'file', read:function(terminal) {	
+	  terminal.print($('<h4>').text('Welcome dotslash registration '));
+		  //terminal.print('To navigate the system, enter "next", "prev", "first", "last", "display", or "random".');
+		  terminal.print('PLease register your seats immediately :)');
+		  terminal.print('Most unix commands work (un)usually. ');
+	  }},
+	  'license.txt': {type:'file', read:function(terminal) {
+		  terminal.print($('<p>').html('Client-side logic for Wordpress CLI theme :: <a href="http://thrind.xamai.ca/">R. McFarland, 2006, 2007, 2008</a>'));
+		  terminal.print($('<p>').html('jQuery rewrite and overhaul :: <a href="http://posterous.humanint.com/">yadudoc, 2011</a> and <a href="http://simula67.wordpress.com/">simula67, 2011</a>'));
+		terminal.print();
+		$.each([
+			'This program is free software; you can redistribute it and/or',
+			'modify it under the terms of the GNU General Public License',
+			'as published by the Free Software Foundation; either version 2',
+			'of the License, or (at your option) any later version.',
+			'',
+			'This program is distributed in the hope that it will be useful,',
+			'but WITHOUT ANY WARRANTY; without even the implied warranty of',
+			'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the',
+			'GNU General Public License for more details.',
+			'',
+			'You should have received a copy of the GNU General Public License',
+			'along with this program; if not, write to the Free Software',
+			'Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.'
+		], function(num, line) {
+			terminal.print(line);
+		});
+	}}
+};
+  
+  About_FS = {
+	  'about.txt': {type:'file', read:function(terminal) {	
+	  terminal.print($('<h4>').text('Welcome to the about file console.'));
+		  //terminal.print('To navigate the system, enter "next", "prev", "first", "last", "display", or "random".');
+		  terminal.print('Use "ls", "cat", and "cd" to navigate the filesystem.');
+		  terminal.print('Most unix commands work (un)usually. ');
+	  }},
+	  'license.txt': {type:'file', read:function(terminal) {
+		  terminal.print($('<p>').html('Client-side logic for Wordpress CLI theme :: <a href="http://thrind.xamai.ca/">R. McFarland, 2006, 2007, 2008</a>'));
+		  terminal.print($('<p>').html('jQuery rewrite and overhaul :: <a href="http://posterous.humanint.com/">yadudoc, 2011</a> and <a href="http://simula67.wordpress.com/">simula67, 2011</a>'));
+		terminal.print();
+		$.each([
+			'This program is free software; you can redistribute it and/or',
+			'modify it under the terms of the GNU General Public License',
+			'as published by the Free Software Foundation; either version 2',
+			'of the License, or (at your option) any later version.',
+			'',
+			'This program is distributed in the hope that it will be useful,',
+			'but WITHOUT ANY WARRANTY; without even the implied warranty of',
+			'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the',
+			'GNU General Public License for more details.',
+			'',
+			'You should have received a copy of the GNU General Public License',
+			'along with this program; if not, write to the Free Software',
+			'Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.'
+		], function(num, line) {
+			terminal.print(line);
+		});
+	}}
+};
+
+	Contacts_FS = {
+	  'contacts.txt': {type:'file', read:function(terminal) {	
+	  terminal.print($('<h4>').text('Welcome to the contacts list.'));
+		  //terminal.print('To navigate the system, enter "next", "prev", "first", "last", "display", or "random".');
+		  terminal.print('Yaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaay');
+		  terminal.print('Most unix commands work (un)usually. ');
+	  }},
+	  'license.txt': {type:'file', read:function(terminal) {
+		  terminal.print($('<p>').html('Client-side logic for Wordpress CLI theme :: <a href="http://thrind.xamai.ca/">R. McFarland, 2006, 2007, 2008</a>'));
+		  terminal.print($('<p>').html('jQuery rewrite and overhaul :: <a href="http://posterous.humanint.com/">yadudoc, 2011</a> and <a href="http://simula67.wordpress.com/">simula67, 2011</a>'));
+		terminal.print();
+		$.each([
+			'This program is free software; you can redistribute it and/or',
+			'modify it under the terms of the GNU General Public License',
+			'as published by the Free Software Foundation; either version 2',
+			'of the License, or (at your option) any later version.',
+			'',
+			'This program is distributed in the hope that it will be useful,',
+			'but WITHOUT ANY WARRANTY; without even the implied warranty of',
+			'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the',
+			'GNU General Public License for more details.',
+			'',
+			'You should have received a copy of the GNU General Public License',
+			'along with this program; if not, write to the Free Software',
+			'Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.'
+		], function(num, line) {
+			terminal.print(line);
+		});
+	}}
+};
+  
+  Filesystem = {
+	  'welcome.txt': {type:'file', read:function(terminal) {	
+	  terminal.print($('<h4>').text('Welcome to the dotslash console.'));
+		  //terminal.print('To navigate the system, enter "next", "prev", "first", "last", "display", or "random".');
+		  terminal.print('Use "ls", "cat", and "cd" to navigate the filesystem.');
+		  terminal.print('Most unix commands work (un)usually. ');
+	  }},
+	  'license.txt': {type:'file', read:function(terminal) {
+		  terminal.print($('<p>').html('Client-side logic for Wordpress CLI theme :: <a href="http://thrind.xamai.ca/">R. McFarland, 2006, 2007, 2008</a>'));
+		  terminal.print($('<p>').html('jQuery rewrite and overhaul :: <a href="http://posterous.humanint.com/">yadudoc, 2011</a> and <a href="http://simula67.wordpress.com/">simula67, 2011</a>'));
 		terminal.print();
 		$.each([
 			'This program is free software; you can redistribute it and/or',
@@ -286,9 +453,10 @@ TerminalShell.pwd = Filesystem;
 
 TerminalShell.commands['cd'] = function(terminal, path) {
 	if (path == '..'){
+		// edit done right :P
 		TerminalShell.pwd = Filesystem;
-		//edit
 		Terminal.config.prompt = 'guest@dotSlash:/$';		
+		Terminal.updateInputDisplay(); 
 	}else{
 			if (path in this.pwd) {
 			if (this.pwd[path].type == 'link') {
