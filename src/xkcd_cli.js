@@ -45,6 +45,7 @@ var xkcd = {
 	}
 };
 
+
 var xkcdDisplay = TerminalShell.commands['display'] = function(terminal, path) {
 	function fail() {
 		terminal.print($('<p>').addClass('error').text('display: unable to open image "'+path+'": No such file or directory.'));
@@ -89,33 +90,35 @@ var xkcdDisplay = TerminalShell.commands['display'] = function(terminal, path) {
 	}, fail);
 };
 
+// Edits
+
+TerminalShell.commands['l33t'] = function(terminal) {
+	terminal.print('if u c4n r34d th1s u r34lly n33d t0 g37 141d...');
+};
+
 TerminalShell.commands['next'] = function(terminal) {
-	xkcdDisplay(terminal, xkcd.last.num+1);
+	terminal.print('Hey..hey, take it slow');
 };
 
 TerminalShell.commands['previous'] =
 TerminalShell.commands['prev'] = function(terminal) {
-	xkcdDisplay(terminal, xkcd.last.num-1);
+	terminal.print('I\'m not a taperecorder');
 };
 
 TerminalShell.commands['first'] = function(terminal) {
-	xkcdDisplay(terminal, 1);
+	terminal.print('At the beginning of it all, there was init');
 };
 
-TerminalShell.commands['latest'] =
 TerminalShell.commands['last'] = function(terminal) {
-	xkcdDisplay(terminal, xkcd.latest.num);
+	terminal.print('My last wish is to die on apache');
 };
 
 TerminalShell.commands['random'] = function(terminal) {
-	xkcdDisplay(terminal, getRandomInt(1, xkcd.latest.num));
+	terminal.print('Take 4, I dropped a die and it showed 4, thats random right ?');
 };
 
 TerminalShell.commands['goto'] = function(terminal, subcmd) {
-	$('#screen').one('cli-ready', function(e) {
-		terminal.print('Did you mean "display"?');
-	});
-	xkcdDisplay(terminal, 292);
+	terminal.print('Didn\'t you hear, goto is bad');
 };
 
 
@@ -734,7 +737,7 @@ function linkFile(url) {
 		});		
 		
 		terminal.print($('<br/>').html(''));
-		terminal.print($('<h4>').html('2. ffmpeg '));
+		terminal.print($('<h4>').html('2. FFmpeg '));
 		$.each([
 			'Prerequisites: Experience in c coding',
 			'Is codec hacking your thing? Join us and learn how stuff works ',
@@ -795,7 +798,6 @@ function linkFile(url) {
   Filesystem = {
 	  'welcome.txt': {type:'file', read:function(terminal) {	
 	  terminal.print($('<h4>').text('Welcome to the dotslash console.'));
-		  //terminal.print('To navigate the system, enter "next", "prev", "first", "last", "display", or "random".');
 		  terminal.print('Use "ls", "cat", and "cd" to navigate the filesystem.');
 		  terminal.print('Use "help" command for a list of common usages.');
 		  terminal.print('Most unix commands work (un)usually. ');
@@ -883,7 +885,7 @@ TerminalShell.commands['cat'] = function(terminal, path) {
 		} else if (this.pwd[path].type == 'dir') {
 			terminal.print('cat: '+path+': Is a directory');
 		}
-	} else if (pathFilename(path) == 'alt.txt') {
+	}/* else if (pathFilename(path) == 'alt.txt') {
 		terminal.setWorking(true);
 		num = Number(path.match(/^\d+/));
 		xkcd.get(num, function(data) {
@@ -892,7 +894,7 @@ TerminalShell.commands['cat'] = function(terminal, path) {
 		}, function() {
 			terminal.print($('<p>').addClass('error').text('cat: "'+path+'": No such file or directory.'));
 			terminal.setWorking(false);
-		});
+		}); */
 	} else {
 		terminal.print('You\'re a kitty!');
 	}
@@ -1039,7 +1041,11 @@ TerminalShell.commands['locate'] = function(terminal, what) {
 		'keys': 'Have you checked your coat pocket?',
 		'joke': 'Joke found on user.',
 		'problem': 'Problem exists between keyboard and chair.',
-		'raptor': 'BEHIND YOU!!!'
+		'raptor': 'BEHIND YOU!!!',
+		'jogy' : 'In the holy temple',
+		'naufal' : 'Somewhere lost in the screwed up FFmpeg code ',
+		'yadu' : 'In Deep Hacker Mode, cannot be found',
+		'girls' : 'Try asking somebody who doesn\'nt live on a server'
 	};
 	if (!oneLiner(terminal, what, keywords)) {
 		terminal.print('Locate what?');
@@ -1137,7 +1143,7 @@ TerminalShell.commands['sleep'] = function(terminal, duration) {
 	}, 1000*duration);
 };
 
-// No peeking!
+// No peeking! <--- ha, not anymore
 // more edits to go here.
 TerminalShell.commands['help'] = TerminalShell.commands['halp'] = function(terminal) {
 	terminal.print($('<h4>').html('Basic help page: Common commands and usages'));	
@@ -1165,22 +1171,25 @@ TerminalShell.fallback = function(terminal, cmd) {
 		'lpr': 'PC LOAD LETTER',
 		'hello joshua': 'How about a nice game of Global Thermonuclear War?',
 		'xyzzy': 'Nothing happens.',
-		'date': 'March 32nd',
+		'date': 'Hey, i\'m already taken',
 		'hello': 'Why hello there!',
+		'unzip' : 'You pervert! there are ladies here',
 		'who': 'Doctor Who?',
-		'xkcd': 'Yes?',
+		'dotslash': 'Yes, kiddo ?',
 		'su': 'God mode activated. Remember, with great power comes great ... aw, screw it, go have fun.',
 		'fuck': 'I have a headache.',
 		'whoami': 'You are Richard Stallman.',
 		'nano': 'Seriously? Why don\'t you just use Notepad.exe? Or MS Paint?',
 		'top': 'It\'s up there --^',
-		'moo':'moo',
+		'moo':'moooo..',
 		'ping': 'There is another submarine three miles ahead, bearing 225, forty fathoms down.',
 		'find': 'What do you want to find? Kitten would be nice.',
 		'hello':'Hello.','more':'Oh, yes! More! More!',
 		'your gay': 'Keep your hands off it!',
-		'hi':'Hi.','echo': 'Echo ... echo ... echo ...',
-		'bash': 'You bash your head against the wall. It\'s not very effective.','ssh': 'ssh, this is a library.',
+		'hi':'Hi.',
+		'echo': 'Echo ... echo ... echo ...',
+		'bash': 'You bash your head against the wall. It\'s not very effective.',
+		'ssh': 'ssh speaking, this is a library.',
 		'uname': 'Illudium Q-36 Explosive Space Modulator',
 		'finger': 'Mmmmmm...',
 		'kill': 'Terminator deployed to 1984.',
@@ -1188,7 +1197,8 @@ TerminalShell.fallback = function(terminal, cmd) {
 		'use the source luke': 'I\'m not luke, you\'re luke!',
 		'serenity': 'You can\'t take the sky from me.',
 		'enable time travel': 'TARDIS error: Time Lord missing.',
-		'ed': 'You are not a diety.'
+		'ed': 'You are not a diety.',
+		'nice' : 'Yea, Tell me about it'
 	};
 	oneliners['emacs'] = 'You should really use vim.';
 	oneliners['vi'] = oneliners['vim'] = 'You should really use emacs.';
@@ -1216,9 +1226,10 @@ TerminalShell.fallback = function(terminal, cmd) {
 		} else if (cmd == 'find kitten') {
 			terminal.print($('<iframe width="800" height="600" src="http://www.robotfindskitten.net/rfk.swf"></iframe>'));
 		} else if (cmd == 'buy stuff') {
-			Filesystem['store'].enter();
+			terminal.print('Hey, you can\'t do that..');
 		} else if (cmd == 'time travel') {
-			xkcdDisplay(terminal, 630);
+			//xkcdDisplay(terminal, 630);
+			terminal.print('Yea right, in another 20 years... or you\'ve gotta be Doc Brown')
 		} else if (/:\(\)\s*{\s*:\s*\|\s*:\s*&\s*}\s*;\s*:/.test(cmd)) {
 			Terminal.setWorking(true);
 		} else {
