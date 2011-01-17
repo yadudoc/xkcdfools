@@ -673,8 +673,8 @@ function linkFile(url) {
   };
 
 	Workshop_FS = {
-	  'workshop': {type:'file', read:function(terminal) {	
-	  	terminal.print($('<h3>').text('Welcome to '));
+	  'hackfest': {type:'file', read:function(terminal) {	
+	  	terminal.print($('<h3>').text('            Welcome to '));
 	  
 		terminal.print();
 		$.each([			                                                                           
@@ -696,11 +696,57 @@ function linkFile(url) {
 			'       /                                                                    ',
 			'      /                                                                     ',
 			'     /                                                                      ',
-			'    /  '
+			'    /  ',
+			'	',
+			'	',
+			'Once a great man said “When solving problems dig at the roots, instead of just hacking at',
+			'the leaves”. For those who disagree, hop on to our hackfest bandwagon..',
+			'Does your brain crave for ever bigger problems to solve, are you the hardware guy who',
+			'loves to tinker with the metal or are you the simple wannabe hacker filled with a lust for',
+			'knowledge.',
+			'Hackfest2k11 is where your code does the talking. As the king penguin so eloquently put it',
+			'                     “Talk is cheap, Show me the code”',
+			'There will be no questions, no time-limits and no judges . On the other hand there will be',
+			'free food, coke and lots of people to help you out.'
+		], function(num, line) {
+			terminal.print(line);			
+		});
+		terminal.print($('<h4>').html('*NOTE : Hackfest is not intended for writing <b>evil</b> code that brings down computer systems and'));
+		terminal.print($('<h4>').html('does any sort of intentional damage'));
+		terminal.print($('<br/>').html(''));
+		terminal.print($('<h4>').html('See proposed areas for the hackfest under file: projects'));
+		terminal.print($('<br/>').html(''));
+		terminal.print($('<h4>').text('_________________________May the source be with you_________________________'));
+	}},
+	
+		'projects': {type:'file', read:function(terminal) {			
+		
+		terminal.print($('<h4>').html('The proposed area’s for Hackfest2k11 are :'));		
+		terminal.print($('<br/>').html(''));
+		terminal.print($('<h4>').html('1. Python-Multitouch + Multitouch hardware'));		
+		$.each([
+			'Prerequisites: None',
+			'Discussion on Python-Multitouch(pymt) and the hardware. ',
+			'Application development in pymt.',
+			'Hacking multitouch hardware '		
 		], function(num, line) {
 			terminal.print(line);
-		});
-	}}
+		});		
+		
+		terminal.print($('<br/>').html(''));
+		terminal.print($('<h4>').html('2. ffmpeg '));
+		$.each([
+			'Prerequisites: Experience in c coding',
+			'Is codec hacking your thing? Join us and learn how stuff works ',
+			'in FFmpeg, the premier multimedia library.'
+		], function(num, line) {
+			terminal.print(line);
+		});		
+		terminal.print($('<br/>').html(''));
+		terminal.print($('<h4>').html('Hackfest is open to proposals... '));	
+		
+		}},
+		
 };
 
 	Sponsors_FS = {
