@@ -800,6 +800,7 @@ function linkFile(url) {
 	  terminal.print($('<h4>').text('Welcome to the dotslash console.'));
 		  terminal.print('Use "ls", "cat", and "cd" to navigate the filesystem.');
 		  terminal.print('Use "help" command for a list of common usages.');
+		  terminal.print('Use page-up and page-down keys to scroll up and down.');
 		  terminal.print('Most unix commands work (un)usually. ');
 	  }},
 	  'license.txt': {type:'file', read:function(terminal) {
