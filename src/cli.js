@@ -227,10 +227,13 @@ var Terminal = {
 				} else {
 					Terminal.setPos(Terminal.buffer.length);
 				}
-			}))
-			.bind('keydown', 'tab', function(e) {
+			}))			
+			.bind('keydown', 'tab', ifActive(function(e) { 
 				e.preventDefault();
-			})
+				
+				Terminal.tabHandler();
+			}))						
+			
 			.keyup(function(e) {
 				var keyName = $.hotkeys.specialKeys[e.which];
 				if (keyName in {'ctrl':true, 'alt':true, 'scroll':true}) {
@@ -313,6 +316,38 @@ var Terminal = {
 	
 	clear: function() {
 		$('#display').html('');
+	},
+	
+	tabHandler: function(){
+		
+		if ( this.buffer.substr(0,4) == 'cat ' & this.buffer.length > 4 ){
+			var left = 'cat '			
+			var rest = this.buffer.substr(4,this.pos);			
+			$.each(TerminalShell.pwd, function(name, obj) {		
+				if ( obj.type == 'file' ) {					
+					var piece = name.substr(0,rest.length);
+					if ( piece == rest ) {
+						rest = name;
+					}}
+			});
+			this.buffer = left + rest;			
+			this.pos = this.buffer.length;
+						
+		}else if ( this.buffer.substr(0,3) == 'cd ' & this.buffer.length > 3){
+			var left = 'cd ';
+			var rest = this.buffer.substr(3,this.pos);			
+			$.each(TerminalShell.pwd, function(name, obj) {		
+				if ( obj.type == 'dir' ) {					
+					var piece = name.substr(0,rest.length);
+					if ( piece == rest ) {
+						rest = name;
+					}}
+			});
+			this.buffer = left + rest;			
+			this.pos = this.buffer.length;									
+		}		
+		this.updateInputDisplay();
+		this.setCursorState(true);
 	},
 	
 	addCharacter: function(character) {

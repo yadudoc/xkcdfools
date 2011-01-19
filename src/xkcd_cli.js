@@ -121,6 +121,7 @@ TerminalShell.commands['goto'] = function(terminal, subcmd) {
 	terminal.print('Didn\'t you hear, goto is bad');
 };
 
+//TerminalShell.commands['startx'] = window.url("http://www.google.com");
 
 TerminalShell.commands['sudo'] = function(terminal) {
 	var cmd_args = Array.prototype.slice.call(arguments);
@@ -155,7 +156,7 @@ TerminalShell.filters.push(function (terminal, cmd) {
 
 TerminalShell.commands['shutdown'] = TerminalShell.commands['poweroff'] = function(terminal) {
 	if (this.sudo) {
-		terminal.print('Broadcast message from guest@xkcd');
+		terminal.print('Broadcast message from guest@dotslash');
 		terminal.print();
 		terminal.print('The system is going down for maintenance NOW!');
 		return $('#screen').fadeOut();
@@ -787,10 +788,7 @@ function linkFile(url) {
 		}},
 		'jogy': {type:'file', read:function(terminal) {
 		  terminal.print($('<p>').html('dotSlash CLI site developer'));
-		}},
-		'arjun': {type:'file', read:function(terminal) {
-		  terminal.print($('<p>').html('dotSlash CLI site developer'));
-		}},
+		}},		
 };
   Contacts_FS['yadunand'] = linkFile('http://posterous.humanint.com');
   
@@ -805,7 +803,8 @@ function linkFile(url) {
 	  }},
 	  'license.txt': {type:'file', read:function(terminal) {
 		  terminal.print($('<p>').html('Client-side logic for Wordpress CLI theme :: <a href="http://thrind.xamai.ca/">R. McFarland, 2006, 2007, 2008</a>'));
-		  terminal.print($('<p>').html('jQuery rewrite and overhaul :: <a href="http://posterous.humanint.com/">yadudoc, 2011</a> and <a href="http://simula67.wordpress.com/">simula67, 2011</a>'));
+		  terminal.print($('<p>').html('jQuery rewrite and overhaul :: <a href="http://www.chromacode.com/">Chromacode, 2010</a>'));
+		  terminal.print($('<p>').html('Majorly hacked by :: <a href="http://posterous.humanint.com/">yadudoc, 2011</a> and <a href="http://simula67.wordpress.com/">simula67, 2011</a>'));
 		terminal.print();
 		$.each([
 			'This program is free software; you can redistribute it and/or',
@@ -839,8 +838,7 @@ Filesystem['contacts'] =dirFile('contacts');
 TerminalShell.pwd = Filesystem;
 
 TerminalShell.commands['cd'] = function(terminal, path) {
-	if (path == '..'){
-		// edit done right :P
+	if (path == '..'){		
 		TerminalShell.pwd = Filesystem;
 		Terminal.config.prompt = 'guest@dotSlash:/$';		
 		Terminal.updateInputDisplay(); 
@@ -962,8 +960,7 @@ TerminalShell.commands['irc'] = function(terminal, nick) {
 	if (nick) {
 		$('.irc').slideUp('fast', function() {
 			$(this).remove();
-		});
-		// edit TODO
+		});		
 	        var url = "http://widget.mibbit.com/?settings=99509cab0139cd1d42552b39d0ff6784&server=irc.mibbit.net&channel=%23dotslash&hashtag=%23dotslash";
 		if (nick) {
 			url += "&nick=" + encodeURIComponent(nick);
