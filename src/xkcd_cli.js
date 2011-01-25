@@ -803,7 +803,7 @@ function linkFile(url) {
 	  }},
 	  'license.txt': {type:'file', read:function(terminal) {
 		  terminal.print($('<p>').html('Client-side logic for Wordpress CLI theme :: <a href="http://thrind.xamai.ca/">R. McFarland, 2006, 2007, 2008</a>'));
-		  terminal.print($('<p>').html('jQuery rewrite and overhaul :: <a href="http://www.chromacode.com/">Chromacode, 2010</a>'));
+		  terminal.print($('<p>').html('jQuery rewrite and overhaul :: <a href="http://www.chromakode.com/">Chromakode, 2010</a>'));
 		  terminal.print($('<p>').html('Majorly hacked by :: <a href="http://posterous.humanint.com/">yadudoc, 2011</a> and <a href="http://simula67.wordpress.com/">simula67, 2011</a>'));
 		terminal.print();
 		$.each([
