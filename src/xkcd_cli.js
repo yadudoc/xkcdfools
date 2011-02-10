@@ -718,7 +718,7 @@ function linkFile(url) {
 		terminal.print($('<h4>').html('*NOTE : Hackfest is not intended for writing <b>evil</b> code that brings down computer systems and'));
 		terminal.print($('<h4>').html('does any sort of intentional damage'));
 		terminal.print($('<br/>').html(''));
-		terminal.print($('<h4>').html('See proposed areas for the hackfest under file: projects'));
+		terminal.print($('<h4>').html('See proposed areas for the hackfest under file: <b>projects</b>'));
 		terminal.print($('<br/>').html(''));
 		terminal.print($('<h4>').text('_________________________May the source be with you_________________________'));
 	}},
@@ -749,6 +749,18 @@ function linkFile(url) {
 		terminal.print($('<br/>').html(''));
 		terminal.print($('<h4>').html('Hackfest is open to proposals... '));	
 		
+		}},
+		
+		'IBM_cloud_workshop': {type:'file', read:function(terminal) {			
+		
+		terminal.print($('<h4>').html('CLOUD WORKSHOP'));		
+		terminal.print($('<br/>').html(''));
+		$.each([
+			'Workshop on Cloud technologies by IBM',
+		], function(num, line) {
+			terminal.print(line);
+		});		
+				
 		}},
 		
 };
