@@ -190,37 +190,32 @@ function linkFile(url) {
 }
 
 // Content based 
- function dirFile(dirname) {
+function dirFile(dirname) {
      return {type:'dir', enter:function() {
-			       if ( dirname == 'events' ){			
-			   		TerminalShell.pwd = Event_FS;
-			   		Terminal.config.prompt = 'guest@dbpb:/events$';
+			       if ( dirname == 'how_dare_they' ){			
+			   		TerminalShell.pwd = HOW_FS;
+			   		Terminal.config.prompt = 'guest@dbpb:/how_dare_they$';
 			   		Terminal.updateInputDisplay(); 
-			   }else if ( dirname == 'workshops'){
+			   }else if ( dirname == 'you\'re_a_douche'){
 				   // edit
-				   	TerminalShell.pwd = Workshop_FS;
-				 		Terminal.config.prompt = 'guest@dbpb:/workshops$';
+				   	TerminalShell.pwd = YOURE_FS;
+				 		Terminal.config.prompt = 'guest@dbpb:/you\'re_a_douche$';
 				 		Terminal.updateInputDisplay(); 
-			   }else if ( dirname == 'sponsors'){
+			   }else if ( dirname == 'hilarious'){
 				   // edit
-				   TerminalShell.pwd = Sponsors_FS;
-				   Terminal.config.prompt = 'guest@dbpb:/sponsors$';
+				   TerminalShell.pwd = HILARIOUS_FS;
+				   Terminal.config.prompt = 'guest@dbpb:/hilarious$';
 				   Terminal.updateInputDisplay(); 
-			   }else if ( dirname == 'register'){
+			   }else if ( dirname == 'i_like_this'){
 				   // edit
-				   TerminalShell.pwd = Register_FS;
-				   Terminal.config.prompt = 'guest@dbpb:/register$';
+				   TerminalShell.pwd = ILIKE_FS;
+				   Terminal.config.prompt = 'guest@dbpb:/i_like_this$';
 				   Terminal.updateInputDisplay(); 
-			   }else if ( dirname == 'about'){
+			   }else if ( dirname == 'umm,wtf?!'){
 				   // edit
-				   TerminalShell.pwd = About_FS;
-				   Terminal.config.prompt = 'guest@dbpb:/about$';
-				   Terminal.updateInputDisplay(); 
-			   }else if ( dirname == 'contacts'){
-				   // edit
-				   TerminalShell.pwd = Contacts_FS;
-				   Terminal.config.prompt = 'guest@dbpb:/contacts$';
-				   Terminal.updateInputDisplay(); 
+				   TerminalShell.pwd = UMM_FS;
+				   Terminal.config.prompt = 'guest@dbpb:/umm,wtf?!$';
+				   Terminal.updateInputDisplay(); 			  
 			   }else{
 					 Terminal.config.prompt = 'seriously_fucked$';
 					 Terminal.updateInputDisplay();
@@ -228,8 +223,8 @@ function linkFile(url) {
 
 	   }};
    }
-
-  Event_FS = {		  
+   
+  HOW_FS = {		  
 	  'a_la_carte': {type:'file', read:function(terminal) {		
 			
 		terminal.print($('<h3>').text('FUNCTION À LA CARTE'));	
@@ -678,7 +673,7 @@ function linkFile(url) {
 		}},
   };
 
-	Workshop_FS = {
+	YOURE_FS = {
 	  'hackfest': {type:'file', read:function(terminal) {	
 	  	terminal.print($('<h3>').text('            Welcome to '));
 	  
@@ -767,14 +762,14 @@ function linkFile(url) {
 		
 };
 
-	Sponsors_FS = {
+	HILARIOUS_FS = {
 	  'sponsors.txt': {type:'file', read:function(terminal) {	
 	  terminal.print($('<h4>').text('Welcome to the sponsors file.'));
 		  terminal.print('TO BE UPDATED');
 	  }},	  
 };
   
-  Register_FS = {
+  ILIKE_FS = {
 	  'register': {type:'file', read:function(terminal) {	
 	  terminal.print($('<h4>').text('REGISTRATION HOWTO'));
 		  terminal.print('Use command :  register <nick> <mail_id> <phone_no> ');
@@ -782,7 +777,7 @@ function linkFile(url) {
 	  }},	  
 };
   
-  About_FS = {
+  UMM_FS = {
 	  'about': {type:'file', read:function(terminal) {	
 	  terminal.print($('<h4>').text('dbpb '));
 		  terminal.print('Awesomest ever!');
@@ -839,11 +834,11 @@ function linkFile(url) {
 	}}
 };
 	
-Filesystem['events'] = dirFile('events');
-Filesystem['workshops'] =dirFile('workshops');
-Filesystem['sponsors'] =dirFile('sponsors');
-Filesystem['register'] =dirFile('register');
-Filesystem['about'] =dirFile('about');
+Filesystem['how_dare_they'] = dirFile('how_dare_they');
+Filesystem['you\'re_a_douche'] =dirFile('you\'re_a_douche');
+Filesystem['hilarious'] =dirFile('hilarious');
+Filesystem['i_like_this'] =dirFile('i_like_this');
+Filesystem['umm,wtf?!'] =dirFile('umm,wtf?!');
 Filesystem['contacts'] =dirFile('contacts');
 
 // End of content based data
