@@ -189,6 +189,7 @@ function linkFile(url) {
 	}};
 }
 
+// Content based 
  function dirFile(dirname) {
      return {type:'dir', enter:function() {
 			       if ( dirname == 'events' ){			
@@ -233,7 +234,8 @@ function linkFile(url) {
 			
 		terminal.print($('<h3>').text('FUNCTION À LA CARTE'));	
 		terminal.print($('<br/>').text(''));
-		terminal.print($('<h4>').text('Description'));	
+		terminal.print($('<h4>').text('Description'));
+		terminal.print($('<img src=\"http://www.google.co.in/images/srpr/logo2w.png\"></img>'));	
 		  $.each([
 					'Shortcuts?? Not anymore!! Lets go back to the basics. Pre-defined functions has',
 					'made programming easier & us, programmers lazier. So, its time to shirk that off &',
@@ -804,7 +806,6 @@ function linkFile(url) {
 };
   Contacts_FS['yadunand'] = linkFile('http://posterous.humanint.com');
   
- 
   Filesystem = {
 	  'welcome.txt': {type:'file', read:function(terminal) {	
 	  terminal.print($('<h4>').text('Welcome to the dotslash console.'));
@@ -845,14 +846,15 @@ Filesystem['register'] =dirFile('register');
 Filesystem['about'] =dirFile('about');
 Filesystem['contacts'] =dirFile('contacts');
 
-
+// End of content based data
 
 TerminalShell.pwd = Filesystem;
 
 TerminalShell.commands['cd'] = function(terminal, path) {
 	if (path == '..'){		
 		TerminalShell.pwd = Filesystem;
-		Terminal.config.prompt = 'guest@dotSlash:/$';		
+		// < configurable  shell prompt >
+		Terminal.config.prompt = 'guest@dotSlash:/$';				
 		Terminal.updateInputDisplay(); 
 	}else{
 			if (path in this.pwd) {
