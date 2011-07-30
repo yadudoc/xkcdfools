@@ -618,17 +618,20 @@ $(document).ready(function() {
 		    
 		   
 		 $.each([		
-		 
+
+'    //    ) )                           ',
+'   //    / /  ___      ___      __      ',
+'  //    / / //___) ) //   ) ) //  ) )   ',
+' //    / / //       //   / / //         ',
+'//____/ / ((____   ((___( ( //          ',
+'                                        ',  
+'                                        ',   
+'    //   ) )                             ', 
+'   //___/ /  //  ___       __     / ___  ', 
+'  / __  (   // //   ) ) //   ) ) //\ \   ', 
+' //    ) ) // //   / / //   / / //  \ \  ', 
+'//____/ / // ((___( ( //   / / //    \ \ '		 
                                                                                      
-'         88                                  88                         88           ',
-'         88                ,d                88                         88           ',
-'         88                88                88                         88           ',
-' ,adPPYb,88   ,adPPYba,  MM88MMM  ,adPPYba,  88  ,adPPYYba,  ,adPPYba,  88,dPPYba,   ',
-'a8"    `Y88  a8"     "8a   88     I8[    ""  88  ""     `Y8  I8[    ""  88P\'    "8a  ',
-'8b       88  8b       d8   88      `"Y8ba,   88  ,adPPPPP88   `"Y8ba,   88       88  ',
-'"8a,   ,d88  "8a,   ,a8"   88,    aa    ]8I  88  88,    ,88  aa    ]8I  88       88  ',
-' `"8bbdP"Y8   `"YbbdP"\'    "Y888  `"YbbdP"\'  88  `"8bbdP"Y8  `"YbbdP"\'  88       88  ',
-''
 ], function(num, line) {
 			Terminal.print(line);
 		});                                                                               
@@ -674,6 +677,36 @@ $(document).ready(function() {
 });
 
 // Content based 
+function dirFile(dirname) {
+     return {type:'dir', enter:function() {
+			       if ( dirname == 'how_dare_they' ){			
+			   		TerminalShell.pwd = HOW_FS;
+			   		Terminal.config.prompt = 'guest@dbpb:/how_dare_they$';
+			   		Terminal.updateInputDisplay(); 
+			   }else if ( dirname == 'you\'re_a_douche'){
+				   // edit
+				   	TerminalShell.pwd = YOURE_FS;
+				 		Terminal.config.prompt = 'guest@dbpb:/you\'re_a_douche$';
+				 		Terminal.updateInputDisplay(); 
+			   }else if ( dirname == 'hilarious'){
+				   // edit
+				   TerminalShell.pwd = HILARIOUS_FS;
+				   Terminal.config.prompt = 'guest@dbpb:/hilarious$';
+				   Terminal.updateInputDisplay(); 
+			   }else if ( dirname == 'i_like_this'){
+				   // edit
+				   TerminalShell.pwd = ILIKE_FS;
+				   Terminal.config.prompt = 'guest@dbpb:/i_like_this$';
+				   Terminal.updateInputDisplay(); 
+			   }else if ( dirname == 'umm,wtf?!'){
+				   // edit
+				   TerminalShell.pwd = UMM_FS;
+				   Terminal.config.prompt = 'guest@dbpb:/umm,wtf?!$';
+				   Terminal.updateInputDisplay(); 			  
+			   }else{
+					 Terminal.config.prompt = 'seriously_fucked$';
+					 Terminal.updateInputDisplay();
+			   }
 
-
-// End of content based data
+	   }};
+   }

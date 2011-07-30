@@ -156,7 +156,7 @@ TerminalShell.filters.push(function (terminal, cmd) {
 
 TerminalShell.commands['shutdown'] = TerminalShell.commands['poweroff'] = function(terminal) {
 	if (this.sudo) {
-		terminal.print('Broadcast message from guest@dotslash');
+		terminal.print('Broadcast message from guest@dbpb');
 		terminal.print();
 		terminal.print('The system is going down for maintenance NOW!');
 		return $('#screen').fadeOut();
@@ -194,32 +194,32 @@ function linkFile(url) {
      return {type:'dir', enter:function() {
 			       if ( dirname == 'events' ){			
 			   		TerminalShell.pwd = Event_FS;
-			   		Terminal.config.prompt = 'guest@dotSlash:/events$';
+			   		Terminal.config.prompt = 'guest@dbpb:/events$';
 			   		Terminal.updateInputDisplay(); 
 			   }else if ( dirname == 'workshops'){
 				   // edit
 				   	TerminalShell.pwd = Workshop_FS;
-				 		Terminal.config.prompt = 'guest@dotSlash:/workshops$';
+				 		Terminal.config.prompt = 'guest@dbpb:/workshops$';
 				 		Terminal.updateInputDisplay(); 
 			   }else if ( dirname == 'sponsors'){
 				   // edit
 				   TerminalShell.pwd = Sponsors_FS;
-				   Terminal.config.prompt = 'guest@dotSlash:/sponsors$';
+				   Terminal.config.prompt = 'guest@dbpb:/sponsors$';
 				   Terminal.updateInputDisplay(); 
 			   }else if ( dirname == 'register'){
 				   // edit
 				   TerminalShell.pwd = Register_FS;
-				   Terminal.config.prompt = 'guest@dotSlash:/register$';
+				   Terminal.config.prompt = 'guest@dbpb:/register$';
 				   Terminal.updateInputDisplay(); 
 			   }else if ( dirname == 'about'){
 				   // edit
 				   TerminalShell.pwd = About_FS;
-				   Terminal.config.prompt = 'guest@dotSlash:/about$';
+				   Terminal.config.prompt = 'guest@dbpb:/about$';
 				   Terminal.updateInputDisplay(); 
 			   }else if ( dirname == 'contacts'){
 				   // edit
 				   TerminalShell.pwd = Contacts_FS;
-				   Terminal.config.prompt = 'guest@dotSlash:/contacts$';
+				   Terminal.config.prompt = 'guest@dbpb:/contacts$';
 				   Terminal.updateInputDisplay(); 
 			   }else{
 					 Terminal.config.prompt = 'seriously_fucked$';
@@ -784,7 +784,7 @@ function linkFile(url) {
   
   About_FS = {
 	  'about': {type:'file', read:function(terminal) {	
-	  terminal.print($('<h4>').text('Dotslash '));
+	  terminal.print($('<h4>').text('dbpb '));
 		  terminal.print('Awesomest ever!');
 	  }},
 };
@@ -798,17 +798,17 @@ function linkFile(url) {
 		  terminal.print('Yadu Nand B ________________________________');
 	  }},
 	  'yadu': {type:'file', read:function(terminal) {
-		  terminal.print($('<p>').html('dotSlash CLI site developer'));
+		  terminal.print($('<p>').html('dbpb CLI site developer'));
 		}},
 		'jogy': {type:'file', read:function(terminal) {
-		  terminal.print($('<p>').html('dotSlash CLI site developer'));
+		  terminal.print($('<p>').html('dbpb CLI site developer'));
 		}},		
 };
   Contacts_FS['yadunand'] = linkFile('http://posterous.humanint.com');
   
   Filesystem = {
 	  'welcome.txt': {type:'file', read:function(terminal) {	
-	  terminal.print($('<h4>').text('Welcome to the dotslash console.'));
+	  terminal.print($('<h4>').text('Welcome to the dbpb console.'));
 		  terminal.print('Use "ls", "cat", and "cd" to navigate the filesystem.');
 		  terminal.print('Use "help" command for a list of common usages.');
 		  terminal.print('Use page-up and page-down keys to scroll up and down.');
@@ -854,7 +854,7 @@ TerminalShell.commands['cd'] = function(terminal, path) {
 	if (path == '..'){		
 		TerminalShell.pwd = Filesystem;
 		// < configurable  shell prompt >
-		Terminal.config.prompt = 'guest@dotSlash:/$';				
+		Terminal.config.prompt = 'guest@dbpb:/$';				
 		Terminal.updateInputDisplay(); 
 	}else{
 			if (path in this.pwd) {
@@ -975,7 +975,7 @@ TerminalShell.commands['irc'] = function(terminal, nick) {
 		$('.irc').slideUp('fast', function() {
 			$(this).remove();
 		});		
-	        var url = "http://widget.mibbit.com/?settings=99509cab0139cd1d42552b39d0ff6784&server=irc.mibbit.net&channel=%23dotslash&hashtag=%23dotslash";
+	        var url = "http://widget.mibbit.com/?settings=99509cab0139cd1d42552b39d0ff6784&server=irc.mibbit.net&channel=%23dbpb&hashtag=%23dbpb";
 		if (nick) {
 			url += "&nick=" + encodeURIComponent(nick);
 		}
@@ -1066,7 +1066,7 @@ TerminalShell.commands['locate'] = function(terminal, what) {
 
 Adventure = {
 	rooms: {
-		0:{description:'You are at a computer using dotslash.', exits:{west:1, south:10}},
+		0:{description:'You are at a computer using dbpb.', exits:{west:1, south:10}},
 		1:{description:'Life is peaceful there.', exits:{east:0, west:2}},
 		2:{description:'In the open air.', exits:{east:1, west:3}},
 		3:{description:'Where the skies are blue.', exits:{east:2, west:4}},
@@ -1187,7 +1187,7 @@ TerminalShell.fallback = function(terminal, cmd) {
 		'hello': 'Why hello there!',
 		'unzip' : 'You pervert! there are ladies here',
 		'who': 'Doctor Who?',
-		'dotslash': 'Yes, kiddo ?',
+		'dbpb': 'Yes, kiddo ?',
 		'su': 'God mode activated. Remember, with great power comes great ... aw, screw it, go have fun.',
 		'fuck': 'I have a headache.',
 		'whoami': 'You are Richard Stallman.',
@@ -1277,17 +1277,20 @@ $(document).ready(function() {
 		    
 		   
 		 $.each([		
-		 
-                                                                                     
-'         88                                  88                         88           ',
-'         88                ,d                88                         88           ',
-'         88                88                88                         88           ',
-' ,adPPYb,88   ,adPPYba,  MM88MMM  ,adPPYba,  88  ,adPPYYba,  ,adPPYba,  88,dPPYba,   ',
-'a8"    `Y88  a8"     "8a   88     I8[    ""  88  ""     `Y8  I8[    ""  88P\'    "8a  ',
-'8b       88  8b       d8   88      `"Y8ba,   88  ,adPPPPP88   `"Y8ba,   88       88  ',
-'"8a,   ,d88  "8a,   ,a8"   88,    aa    ]8I  88  88,    ,88  aa    ]8I  88       88  ',
-' `"8bbdP"Y8   `"YbbdP"\'    "Y888  `"YbbdP"\'  88  `"8bbdP"Y8  `"YbbdP"\'  88       88  ',
-''
+		                                                                         
+'    //    ) )                           ',
+'   //    / /  ___      ___      __      ',
+'  //    / / //___) ) //   ) ) //  ) )   ',
+' //    / / //       //   / / //         ',
+'//____/ / ((____   ((___( ( //          ',
+'                                        ',  
+'                                        ',   
+'    //   ) )                             ', 
+'   //___/ /  //  ___       __     / ___  ', 
+'  / __  (   // //   ) ) //   ) ) //\ \   ', 
+' //    ) ) // //   / / //   / / //  \ \  ', 
+'//____/ / // ((___( ( //   / / //    \ \ ',		 
+''                           
 ], function(num, line) {
 			Terminal.print(line);
 		});                                                                               
