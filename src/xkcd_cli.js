@@ -608,46 +608,243 @@ terminal.print(' Sincerely, the world. ');
 
 };
 
-/*
-	HILARIOUS_FS = {
-	  'sponsors.txt': {type:'file', read:function(terminal) {	
-	  terminal.print($('<h4>').text('Welcome to the sponsors file.'));
-		  terminal.print('TO BE UPDATED');
-	  }},	  
-};
-*/  
-  ILIKE_FS = {
-	  'register': {type:'file', read:function(terminal) {	
-	  terminal.print($('<h4>').text('REGISTRATION HOWTO'));
-		  terminal.print('Use command :  register <nick> <mail_id> <phone_no> ');
-		  terminal.print('Remember not to have spaces in nickname and phone_no');
-	  }},	  
+ILIKE_FS = {
+'Dear_Women' : {type:'file', read:function(terminal) {
+terminal.print(' Please stop thinking you have to be a size 0 ');
+terminal.print(' be beautiful.Those magazines got it all wrong, no one ever ');
+terminal.print(' them that beautyis also on the inside. Be confident and ');
+terminal.print(' with yourself. Someguy out there is going to fall in ');
+terminal.print(' with everything aboutyou. ');
+terminal.print(' Sincerely, a real man ');
+}} ,
+
+
+'Dear_war_in_Iraq' : {type:'file', read:function(terminal) {
+terminal.print(' Please end soon. ');
+terminal.print(' Sincerely, I miss my dad. ');
+}} ,
+
+
+'Dear_Obama' : {type:'file', read:function(terminal) {
+terminal.print(' Please ignore what they are saying. Youre doing a greatjob! ');
+terminal.print(' Sincerely, Faithful American ');
+}} ,
+
+
+'Dear_cancer' : {type:'file', read:function(terminal) {
+terminal.print(' My mom is too strong for you. Just leave already. ');
+terminal.print(' Sincerely, daughter. ');
+}} ,
+
+
+'Dear_You' : {type:'file', read:function(terminal) {
+terminal.print(' Smile. Youre beautiful. ');
+terminal.print(' Sincerely, Me ');
+}} ,
+
+
+'Dear_Nickelodeon' : {type:'file', read:function(terminal) {
+terminal.print(' Whatever happened to quality programming? ');
+terminal.print(' Sincerely, children of the 90s ');
+}} ,
+
+
+'Dear_Grouchy_Femini' : {type:'file', read:function(terminal) {
+terminal.print(' Please dont take my chivalry the wrong way. Im openinga ');
+terminal.print(' for you because its courteous, not because I think youcant ');
+terminal.print(' it yourself. ');
+terminal.print(' Sincerely, A Nice Guy ');
+}} ,
+
+
+'Dear_Hogwarts_Schoo' : {type:'file', read:function(terminal) {
+terminal.print(' Please send me my letter already. Im tired of the ');
+terminal.print(' Sincerely, the kid who still believes in magic ');
+}} ,
+
+
+'Dear_War_on_Terror' : {type:'file', read:function(terminal) {
+terminal.print(' Please end. Id like to come home soon. ');
+terminal.print(' Sincerely, a soldier who misses his family ');
+}} ,
+
+
+'Dear_America' : {type:'file', read:function(terminal) {
+terminal.print(' Please understand that saying all Muslim people are terroristsis like ');
+terminal.print(' all Americans are like the people on JerseyShore. ');
+terminal.print(' Sincerely, Sane People ');
+}} ,
+
+
+'Dear_eating_disorde' : {type:'file', read:function(terminal) {
+terminal.print(' I can look in a mirror and feel beautiful without ');
+terminal.print(' now. ');
+terminal.print(' Sincerely, stronger than ever. ');
+}} ,
+
+
+'Dear_Secular_World_' : {type:'file', read:function(terminal) {
+terminal.print(' Please stop being so appalled that Im 24 and have ');
+terminal.print(' toremain a virgin until marriage. Its not a disease, and ');
+terminal.print(' aware of what Im "missing out" on. ');
+terminal.print(' Sincerely, Clean Vagina ');
+}} ,
+
+
+'Dear_flat_chested_g' : {type:'file', read:function(terminal) {
+terminal.print(' Please dont give up. We exist. ');
+terminal.print(' Sincerely, Guys who like small boobs ');
+}} ,
+
+
+'Dear_racist' : {type:'file', read:function(terminal) {
+terminal.print(' Your car is Japanese. Your beer is German. Your wine ');
+terminal.print(' Spanish.Your democracy is Greek. Your coffee is Colombian. Your tea ');
+terminal.print(' Your watch is Swiss. Your fashion is French. Your shirt ');
+terminal.print(' Your shoes are Thai. Your radio is Korean. Your vodka ');
+terminal.print(' And then you complain that your neighbor is animmigrant? ');
+terminal.print(' Sincerely, lets just all live and let live ');
+}} ,
+
+
+'Dear_people_who_thi' : {type:'file', read:function(terminal) {
+terminal.print(' The girl you just called fat? She has been starving ');
+terminal.print(' andhas lost over 30lbs. The boy you called stupid? He ');
+terminal.print(' a learningdisability and studies over 4hrs a night. The girl ');
+terminal.print(' just calledugly? She spends hours putting makeup on hoping people ');
+terminal.print(' likeher. The boy you tripped yesterday? He is abused enough ');
+terminal.print(' Sincerely, there is a lot more to people than you ');
+terminal.print(' Stopbullying. ');
+}} 
+
 };
   
-  UMM_FS = {
-	  'about': {type:'file', read:function(terminal) {	
-	  terminal.print($('<h4>').text('dbpb '));
-		  terminal.print('Awesomest ever!');
-	  }},
+UMM_FS = {
+'Dear_Sister' : {type:'file', read:function(terminal) {
+terminal.print(' By the time you read this Ill be dead. This ');
+terminal.print(' how I thinkits gonna happen: Dave will shoot me, then ');
+terminal.print(' shootDave, then Eric will enter and get shot by Dave. ');
+terminal.print(' youllcome in and get shot by Eric, Dave, and I ');
+terminal.print(' times. ');
+terminal.print(' Sincerely, Your brother Keith. P.S. Then two cops will read ');
+terminal.print(' and shoot each other ');
+}} ,
+
+
+'Dear_Diary' : {type:'file', read:function(terminal) {
+terminal.print(' Please stop hiding in easy places for my parents to ');
+terminal.print(' Havingto answer questions about my sexual experiences with homeless menin ');
+terminal.print(' park is becoming annoying. ');
+terminal.print(' Sincerely, I Like Boys ');
+}} ,
+
+
+'Dear_Poop' : {type:'file', read:function(terminal) {
+terminal.print(' I havent eaten corn in days... ');
+terminal.print(' Sincerely, WTF?!?! ');
+}} ,
+
+
+'Dear_Dad' : {type:'file', read:function(terminal) {
+terminal.print(' Please stop coming into my room in the middle of ');
+terminal.print(' night. ');
+terminal.print(' Sincerely, anonymous. ');
+}} ,
+
+
+'Dear_Mom' : {type:'file', read:function(terminal) {
+terminal.print(' Please dont ground me when I tell you my 20-year-old-bffrom ');
+terminal.print(' who Ive been dating over the internet is coming overfor ');
+terminal.print(' 18th birthday. P.S I want him to sleep in my ');
+terminal.print(' Sincerely, hopelessly-in-love-Daughter ');
+}} ,
+
+
+'Dear_Mom' : {type:'file', read:function(terminal) {
+terminal.print(' Please stop making yourself throw up in the shower. ');
+terminal.print(' Sincerely, I can hear you ');
+}} ,
+
+
+'Dear_students' : {type:'file', read:function(terminal) {
+terminal.print(' Welcome to Putnam Middle School! Enjoy your first period! ');
+terminal.print(' Sincerely, your principal ');
+}} ,
+
+
+'Dear_boyfriend' : {type:'file', read:function(terminal) {
+terminal.print(' Please stop sniffing my dirty clothes. Its becomingcreepy. ');
+terminal.print(' Sincerely, your girlfriend. ');
+}} ,
+
+
+'Dear_Humans' : {type:'file', read:function(terminal) {
+terminal.print(' Bring lube. ');
+terminal.print(' Sincerely, Aliens ');
+}} ,
+
+
+'Dear_Mark' : {type:'file', read:function(terminal) {
+terminal.print(' That was a very loud beep... I dont even know ');
+terminal.print(' this isworking. Mark! Mark! Are you there? Are you screening ');
+terminal.print(' calls?Its Mom. We wanted to call and say we love ');
+terminal.print(' and wellmiss you tomorrow. Cindy and the kids are here, ');
+terminal.print(' their love.Oh! I hope you like the hot plate! Just ');
+terminal.print(' leave it on,dear, when you leave the house! Oh and ');
+terminal.print(' Were sorry tohear that Maureen dumped you, I say cest ');
+terminal.print(' vie! So let her bea lesbian! There are other fishies ');
+terminal.print(' the sea. ');
+terminal.print(' Sincerely, Mom ');
+}} ,
+
+
+'Dear_Google_Maps' : {type:'file', read:function(terminal) {
+terminal.print(' Please extend your street view to the rural parts of ');
+terminal.print(' Im trying to find out which field I left my ');
+terminal.print(' Sincerely, anonymous. ');
+}} ,
+
+
+'Dear_Boyfriend_in_G' : {type:'file', read:function(terminal) {
+terminal.print(' I love you. ');
+terminal.print(' Sincerely, Your girlfriend in California :) ');
+}} ,
+
+
+'Dear_poops' : {type:'file', read:function(terminal) {
+terminal.print(' Please stay in when I fart. ');
+terminal.print(' Sincerely, thats not gonna come out in the washer. ');
+}} ,
+
+
+'Dear_Cutie' : {type:'file', read:function(terminal) {
+terminal.print(' Your living room arrangement looks nice from the yard. ');
+terminal.print(' Sincerely, Stalker ');
+}} ,
+
+
+'Dear_girlfriend' : {type:'file', read:function(terminal) {
+terminal.print(' Please forgive me. I just bought a ring. Im afraid ');
+terminal.print(' giveit to you, because I know eventually you will die, ');
+terminal.print(' will breakmy heart. ');
+terminal.print(' Sincerely, sir ');
+}} 
+
 };
 
+/*
 	Contacts_FS = {
 	  'contacts.txt': {type:'file', read:function(terminal) {	
 	  terminal.print($('<h4>').text('Welcome to the contacts list.'));
-		  terminal.print('Anjaneya __________________________________');
-		  terminal.print('Mani Mozhi ________________________________');
-		  terminal.print('Prannoy C Vargis ________________________________');
-		  terminal.print('Yadu Nand B ________________________________');
-	  }},
-	  'yadu': {type:'file', read:function(terminal) {
-		  terminal.print($('<p>').html('dbpb CLI site developer'));
-		}},
-		'jogy': {type:'file', read:function(terminal) {
-		  terminal.print($('<p>').html('dbpb CLI site developer'));
-		}},		
+		  terminal.print('Arjun        arjun1296@gmail.com');
+		  terminal.print('Dhananjay    mb.dhananjay@gmail.com');
+		  terminal.print('Jogy         simula67@gmail.com');
+		  terminal.print('Naufal       naufal22@gmail.com');		  
+		  terminal.print('Yadu         yadudoc1729@gmail.com');
+	  }},	  
 };
-  Contacts_FS['yadunand'] = linkFile('http://posterous.humanint.com');
   
+  */
   Filesystem = {
 	  'welcome.txt': {type:'file', read:function(terminal) {	
 	  terminal.print($('<h4>').text('Welcome to the dbpb console.'));
@@ -686,7 +883,7 @@ Filesystem['you\'re_a_douche'] =dirFile('you\'re_a_douche');
 Filesystem['hilarious'] =dirFile('hilarious');
 Filesystem['i_like_this'] =dirFile('i_like_this');
 Filesystem['umm,wtf?!'] =dirFile('umm,wtf?!');
-Filesystem['contacts'] =dirFile('contacts');
+//Filesystem['contacts'] =dirFile('contacts');
 
 // End of content based data
 

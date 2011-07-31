@@ -1,3 +1,15 @@
+OpenHack
+========
+
+Please read the below description. This project was extended 
+in less than 24hours for demoing as a hack for Yahoo! Open
+Hack, India.
+
+We have used content from Dear Blank Please Blank which
+we all love. So thanks to them and the people who post 
+content there.
+
+
 DotSlash
 ========
 
