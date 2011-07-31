@@ -223,7 +223,143 @@ function dirFile(dirname) {
 
 	   }};
    }
-   
+  
+  HOW_FS = {
+'Dear_Girlfriend' : {type:'file', read:function(terminal) {
+terminal.print(' Please dont use my 12 month deployment into Afghanistan asan ');
+terminal.print(' to dump me. ');
+terminal.print(' Sincerely, Just trying to provide for you ');
+}} ,
+
+
+'Dear_mom' : {type:'file', read:function(terminal) {
+terminal.print(' Thanks for the lung cancer I now have from your ');
+terminal.print(' handsmoke. The doctors say I have a year, enjoy your ');
+terminal.print(' packs aday. ');
+terminal.print(' Sincerely, your daughter. ');
+}} ,
+
+
+'Dear_whoever_just_b' : {type:'file', read:function(terminal) {
+terminal.print(' Please enjoy my complete collection of U2 CDs, especially theanniversary ');
+terminal.print(' of the Joshua Tree and the Unforgettable Fire.I hope you ');
+terminal.print(' all the autographed, scratched up Jars ofClay albums that were ');
+terminal.print(' favorite when I was 14. I hope youappreciate the CDs ');
+terminal.print(' were given to me at important times in mylife. I ');
+terminal.print(' you appreciate how much it cost me to track down ');
+terminal.print(' Rice albums, and please enjoy some of Damien Riceschoice lyrics ');
+terminal.print(' I would like to dedicate to you. I hope youappreciate ');
+terminal.print(' you just did to my views of that part of ');
+terminal.print(' hope you love Over the Rhine, Tchaikovsky, and the Decemberists,because ');
+terminal.print(' what you got. I hope you appreciate how muchIm going ');
+terminal.print(' have to pay to get a new window. Truth is,youre ');
+terminal.print(' going to get much for them, because they wontbe worth ');
+terminal.print(' to anyone except me. Thanks a lot. ');
+terminal.print(' Sincerely, one of the nicest people ever ');
+}} ,
+
+
+'Dear_mother' : {type:'file', read:function(terminal) {
+terminal.print(' Please realize it wasnt a phase, and it still hurts ');
+terminal.print(' think it is. ');
+terminal.print(' Sincerely, Your gay son ');
+}} ,
+
+
+'Dear_Ex-Boyfriend' : {type:'file', read:function(terminal) {
+terminal.print(' Changing your relationship status to "single" onFacebook is not a ');
+terminal.print(' way to break up with someone. ');
+terminal.print(' Sincerely, All you had to do was tell me ');
+}} ,
+
+
+'Dear_father' : {type:'file', read:function(terminal) {
+terminal.print(' Please stop making my little brother want to commit suicide. ');
+terminal.print(' year old should not be putting a knife to his ');
+terminal.print(' Sincerely, your daughter who had to put up with this ');
+terminal.print(' stuff. ');
+}} ,
+
+
+'Dear_future_in-laws' : {type:'file', read:function(terminal) {
+terminal.print(' Please grow up and realize that you only get one ');
+terminal.print(' Itsunacceptable to not come to your own sons wedding. Barring ');
+terminal.print(' in the family, there is no other excuse not to ');
+terminal.print(' up.Thanks for breaking my future husbands heart. ');
+terminal.print(' Sincerely, Apparently un-welcome future daughter-in-law ');
+}} ,
+
+
+'Dear_boyfriend' : {type:'file', read:function(terminal) {
+terminal.print(' Thank you for moving me 1,000 miles away from my ');
+terminal.print(' andfriends to this dumpy town after you got transferred. Also, ');
+terminal.print(' cheating on me and getting herpes. Super awesome. ');
+terminal.print(' Sincerely, done with you. ');
+}} ,
+
+
+'Dear_Nice_Loving_Fa' : {type:'file', read:function(terminal) {
+terminal.print(' I dont want to be Christian anymore. I know that ');
+terminal.print(' youall wont love me anymore, as you explicitly said at ');
+terminal.print(' dinnertable, so Ill leave now. ');
+terminal.print(' Sincerely, your Daughter ');
+}} ,
+
+
+'Dear_best_friend' : {type:'file', read:function(terminal) {
+terminal.print(' Please stop telling me I have small boobs. I am ');
+terminal.print(' B cup. You areonly a C cup because you are ');
+terminal.print(' lot heavier than I am. Maybe you areinsecure, but you ');
+terminal.print(' nothing to be insecure about and yourehurting me. ');
+terminal.print(' Sincerely, considering a boob job now ');
+}} ,
+
+
+'Dear_first_love' : {type:'file', read:function(terminal) {
+terminal.print(' Please stop flirting with me. Ive loved you since 1993. ');
+terminal.print(' married with 3 kids. Every time you say something sweetand ');
+terminal.print(' my heart breaks a little more. Enough now.Enough. ');
+terminal.print(' Sincerely, Heartbroken Girl ');
+}} ,
+
+
+'Dear_fellow_classma' : {type:'file', read:function(terminal) {
+terminal.print(' Please stop trying to be my friend on Facebook. You ');
+terminal.print(' me 20years ago. You terrorized me. You made fun of ');
+terminal.print(' threw things atme and vandalized my house. What makes you ');
+terminal.print(' all is forgivenand Im ready to be your buddy now? ');
+terminal.print(' Sincerely, Still Bitter ');
+}} ,
+
+
+'Dear_My_Cheat_of_a_' : {type:'file', read:function(terminal) {
+terminal.print(' Yeah I found all your letters to your lover. I ');
+terminal.print(' your textstoo. This isnt gonna work out any more. ');
+terminal.print(' Sincerely, Daddy-loving Daughter ');
+}} ,
+
+
+'Dear_government' : {type:'file', read:function(terminal) {
+terminal.print(' Please stop cutting my job at the library. I read ');
+terminal.print(' children,help old people use computers, and make suicidal teens feelaccepted ');
+terminal.print(' so I can get through college and maybe make my ');
+terminal.print(' better. ');
+terminal.print(' Sincerely, anonymous. ');
+}} ,
+
+
+'Dear_stepdad' : {type:'file', read:function(terminal) {
+terminal.print(' I wish you had loved me more than the money ');
+terminal.print(' gave you for rent.They cut my hours, I couldnt pay ');
+terminal.print(' you kicked me out.Ive tried to forgive you for this ');
+terminal.print(' I cant. ');
+terminal.print(' Sincerely, worth less to you than the rent. ');
+}} 
+
+};
+
+/*
+    
   HOW_FS = {		  
 	
 	  'a_la_carte': {type:'file', read:function(terminal) {		
@@ -270,103 +406,216 @@ function dirFile(dirname) {
 		}},
 	  
  };
+*/
 
-	YOURE_FS = {
-	  'hackfest': {type:'file', read:function(terminal) {	
-	  	terminal.print($('<h3>').text('            Welcome to '));
-	  
-		terminal.print();
-		$.each([			                                                                           
-			'  /                             /           /##                             ',
-			'#/                            #/          #/ ###                            ',
-			'##                            ##         ##   ###                     #     ',
-			'##                            ##         ##                          ##     ',
-			'##                            ##         ##                          ##     ',
-			'##  /##      /###     /###    ##  /##    ###### /##       /###     ######## ',
-			'## / ###    / ###  / / ###  / ## / ###   ##### / ###     / #### / ########  ',
-			'##/   ###  /   ###/ /   ###/  ##/   /    ##   /   ###   ##  ###/     ##     ',
-			'##     ## ##    ## ##         ##   /     ##  ##    ### ####          ##     ',
-			'##     ## ##    ## ##         ##  /      ##  ########    ###         ##     ',
-			'##     ## ##    ## ##         ## ##      ##  #######       ###       ##     ',
-			'##     ## ##    ## ##         ######     ##  ##              ###     ##     ',
-			'##     ## ##    /# ###     /  ##  ###    ##  ####    /  /###  ##     ##     ',
-			'##     ##  ####/ ## ######/   ##   ### / ##   ######/  / #### /      ##     ',
-			' ##    ##   ###   ## #####     ##   ##/   ##   #####      ###/        ##    ',
-			'       /                                                                    ',
-			'      /                                                                     ',
-			'     /                                                                      ',
-			'    /  ',
-			'	',
-			'	',
-			'Once a great man said “When solving problems dig at the roots, instead of just hacking at',
-			'the leaves”. For those who disagree, hop on to our hackfest bandwagon..',
-			'Does your brain crave for ever bigger problems to solve, are you the hardware guy who',
-			'loves to tinker with the metal or are you the simple wannabe hacker filled with a lust for',
-			'knowledge.',
-			'Hackfest2k11 is where your code does the talking. As the king penguin so eloquently put it',
-			'                     “Talk is cheap, Show me the code”',
-			'There will be no questions, no time-limits and no judges . On the other hand there will be',
-			'free food, coke and lots of people to help you out.'
-		], function(num, line) {
-			terminal.print(line);			
-		});
-		terminal.print($('<h4>').html('*NOTE : Hackfest is not intended for writing <b>evil</b> code that brings down computer systems and'));
-		terminal.print($('<h4>').html('does any sort of intentional damage'));
-		terminal.print($('<br/>').html(''));
-		terminal.print($('<h4>').html('See proposed areas for the hackfest under file: <b>projects</b>'));
-		terminal.print($('<br/>').html(''));
-		terminal.print($('<h4>').text('_________________________May the source be with you_________________________'));
-	}},
-	
-		'projects': {type:'file', read:function(terminal) {			
-		
-		terminal.print($('<h4>').html('The proposed area’s for Hackfest2k11 are :'));		
-		terminal.print($('<br/>').html(''));
-		terminal.print($('<h4>').html('1. Python-Multitouch + Multitouch hardware'));		
-		$.each([
-			'Prerequisites: None',
-			'Discussion on Python-Multitouch(pymt) and the hardware. ',
-			'Application development in pymt.',
-			'Hacking multitouch hardware '		
-		], function(num, line) {
-			terminal.print(line);
-		});		
-		
-		terminal.print($('<br/>').html(''));
-		terminal.print($('<h4>').html('2. FFmpeg '));
-		$.each([
-			'Prerequisites: Experience in c coding',
-			'Is codec hacking your thing? Join us and learn how stuff works ',
-			'in FFmpeg, the premier multimedia library.'
-		], function(num, line) {
-			terminal.print(line);
-		});		
-		terminal.print($('<br/>').html(''));
-		terminal.print($('<h4>').html('Hackfest is open to proposals... '));	
-		
-		}},
-		
-		'IBM_cloud_workshop': {type:'file', read:function(terminal) {			
-		
-		terminal.print($('<h4>').html('CLOUD WORKSHOP'));		
-		terminal.print($('<br/>').html(''));
-		$.each([
-			'Workshop on Cloud technologies by IBM',
-		], function(num, line) {
-			terminal.print(line);
-		});		
-				
-		}},
-		
+YOURE_FS = {
+'Dear_girls' : {type:'file', read:function(terminal) {
+terminal.print(' If you can read this, make me a sammich. ');
+terminal.print(' Sincerely, a boy ');
+}} ,
+
+
+'Dear_Stephenie_Meye' : {type:'file', read:function(terminal) {
+terminal.print(' Please make another book for the Twilight series. Please, I ');
+terminal.print(' you. ');
+terminal.print(' Sincerely, Twihard. ');
+}} ,
+
+
+'Dear_fat_people' : {type:'file', read:function(terminal) {
+terminal.print(' Please stop parading your lard on the street and lose ');
+terminal.print(' You disgust me. ');
+terminal.print(' Sincerely, Slim Jim. ');
+}} ,
+
+
+'Dear_Wife' : {type:'file', read:function(terminal) {
+terminal.print(' Please get a bikini wax. You look ridiculous with hair ');
+terminal.print(' of your granny panties. ');
+terminal.print(' Sincerely, Husband ');
+}} ,
+
+
+'Dear_Asians' : {type:'file', read:function(terminal) {
+terminal.print(' At least wear name tags or something. ');
+terminal.print(' Sincerely, The rest of the world ');
+}} ,
+
+
+'Dear_grandmother' : {type:'file', read:function(terminal) {
+terminal.print(' Please stop muttering to yourself and forgetting things. If youkeep ');
+terminal.print(' up, Im putting you in an old folks home. ');
+terminal.print(' Sincerely, your oldest granddaughter. ');
+}} ,
+
+
+'Dear_idiot_down_the' : {type:'file', read:function(terminal) {
+terminal.print(' No one cares if you are the only person in ');
+terminal.print(' neighborhood witha 62 flat screen 3D LED TV. I just ');
+terminal.print(' sex with yourgirlfriend for the 4th time since monday, thats ');
+terminal.print(' hi defentertainment for me. There are some things money cantbuy... ');
+terminal.print(' Sincerely, the naked guy in your house, on your computer ');
+}} ,
+
+
+'Dear_J.K._Rowling' : {type:'file', read:function(terminal) {
+terminal.print(' Your books are entirely unrealistic. I mean, a ginger kid ');
+terminal.print(' friends? ');
+terminal.print(' Sincerely, anonymous. ');
+}} ,
+
+
+'Dear_chubby_girls' : {type:'file', read:function(terminal) {
+terminal.print(' HA! No, no, no... Skinny jeans do not make you ');
+terminal.print(' skinny...Nice try though... A for effort. ');
+terminal.print(' Sincerely, anonymous. ');
+}} ,
+
+
+'Dear_People_complai' : {type:'file', read:function(terminal) {
+terminal.print(' Its 2010, grammar doesnt matter anymore. ');
+terminal.print(' Sincerely, anonymous. ');
+}} ,
+
+
+'Dear_Fat_People' : {type:'file', read:function(terminal) {
+terminal.print(' Stop messing up the whole rack when you search for ');
+terminal.print(' XXLshirts at the bottom. Thanks. ');
+terminal.print(' Sincerely, Pissed off worker ');
+}} ,
+
+
+'Dear_smokers' : {type:'file', read:function(terminal) {
+terminal.print(' Please hurry up and die. ');
+terminal.print(' Sincerely, Richard. ');
+}} ,
+
+
+'Dear_girlfriend' : {type:'file', read:function(terminal) {
+terminal.print(' "I didnt know you were coming over" is no excusefor ');
+terminal.print(' shaving your legs. ');
+terminal.print(' Sincerely, grossed out boyfriend. ');
+}} ,
+
+
+'Dear_women' : {type:'file', read:function(terminal) {
+terminal.print(' Please stop talking about your period around EVERYONE. We getit, ');
+terminal.print(' sucks, now try getting a sports hernia. Oh wait! ');
+terminal.print(' Sincerely, everybody. ');
+}} ,
+
+
+'Dear_Obama' : {type:'file', read:function(terminal) {
+terminal.print(' Please ignore what they are saying. Youre doing a greatjob! ');
+terminal.print(' Sincerely, Faithful American ');
+}} 
+
 };
 
+HILARIOUS_FS = {
+'Dear_Noah' : {type:'file', read:function(terminal) {
+terminal.print(' We could have sworn you said the ark wasnt leaving ');
+terminal.print(' Sincerely, Unicorns ');
+}} ,
+
+
+'Dear_Twilight_fans' : {type:'file', read:function(terminal) {
+terminal.print(' Please realize that because vampires are dead and have no ');
+terminal.print(' through them, they can never get an erection. Enjoyfantasizing about ');
+terminal.print(' Sincerely, Logic ');
+}} ,
+
+
+'Dear_J.K._Rowling' : {type:'file', read:function(terminal) {
+terminal.print(' Your books are entirely unrealistic. I mean, a ginger kid ');
+terminal.print(' friends? ');
+terminal.print(' Sincerely, anonymous. ');
+}} ,
+
+
+'Dear_icebergs' : {type:'file', read:function(terminal) {
+terminal.print(' Sorry to hear about the global warming. Enjoy the Karma... ');
+terminal.print(' Sincerely, the Titanic. ');
+}} ,
+
+
+'Dear_Mom' : {type:'file', read:function(terminal) {
+terminal.print(' Im 16 now, can I PLEASE get a bra? ');
+terminal.print(' Sincerely, your son, Justin B ');
+}} ,
+
+
+'Dear_Boyfriend' : {type:'file', read:function(terminal) {
+terminal.print(' I can make your girlfriend scream louder than you can. ');
+terminal.print(' Sincerely, Spiders ');
+}} ,
+
+
+'Dear_Students' : {type:'file', read:function(terminal) {
+terminal.print(' I know when youre texting. ');
+terminal.print(' Sincerely, No one just looks down at their crotch and ');
+}} ,
+
+
+'Dear_America' : {type:'file', read:function(terminal) {
+terminal.print(' You produced Miley Cyrus. Bieber is your punishment. ');
+terminal.print(' Sincerely, Canada ');
+}} ,
+
+
+'Dear_person_reading' : {type:'file', read:function(terminal) {
+terminal.print(' Youre here because youre actively procrastinating oravoiding real work, arent ');
+terminal.print(' Its OK...me too. ');
+terminal.print(' Sincerely, Ill work tomorrow ');
+}} ,
+
+
+'Dear_6' : {type:'file', read:function(terminal) {
+terminal.print(' Please stop spreading rumors about me eating 9. Youshouldnt be ');
+terminal.print(' I hear you guys do some pretty nastythings. ');
+terminal.print(' Sincerely, 7 ');
+}} ,
+
+
+'Dear_Buffy' : {type:'file', read:function(terminal) {
+terminal.print(' We have a new assignment for you. His name is ');
+terminal.print(' Sincerely, anonymous. ');
+}} ,
+
+
+'Dear_Twilight_fans' : {type:'file', read:function(terminal) {
+terminal.print(' Thank you for making us look sane and well-adjusted. ');
+terminal.print(' Sincerely, Trekkies. ');
+}} ,
+
+
+'Dear_Waldo' : {type:'file', read:function(terminal) {
+terminal.print(' Please return my invisibility cloak ASAP. ');
+terminal.print(' Sincerely, H. Potter ');
+}} ,
+
+
+'Dear_Edward_Cullen' : {type:'file', read:function(terminal) {
+terminal.print(' Avada Kedavra! ');
+terminal.print(' Sincerely, Tom Riddle ');
+}} ,
+
+
+'Dear_Nickelback' : {type:'file', read:function(terminal) {
+terminal.print(' Thats enough. ');
+terminal.print(' Sincerely, the world. ');
+}} 
+
+};
+
+/*
 	HILARIOUS_FS = {
 	  'sponsors.txt': {type:'file', read:function(terminal) {	
 	  terminal.print($('<h4>').text('Welcome to the sponsors file.'));
 		  terminal.print('TO BE UPDATED');
 	  }},	  
 };
-  
+*/  
   ILIKE_FS = {
 	  'register': {type:'file', read:function(terminal) {	
 	  terminal.print($('<h4>').text('REGISTRATION HOWTO'));
