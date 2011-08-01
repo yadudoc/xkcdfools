@@ -1,0 +1,226 @@
+function pathFilename(path) {
+	var match = /\/([^\/]+)$/.exec(path);
+	if (match) {
+		return match[1];
+	}
+}
+
+function getRandomInt(min, max) {
+	// via https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Math/random#Examples
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function randomChoice(items) {
+	return items[getRandomInt(0, items.length-1)];
+}
+
+var xkcd = {
+	latest: null,
+	last: null,
+	cache: {},
+	base: 'http://dynamic.xkcd.com/api-0/jsonp/comic/',
+	get: function(num, success, error) {
+		if (num == null) {
+			path = '';
+		} else if (Number(num)) {
+			path = String(num);
+		} else {
+			error(false);
+			return false;
+		}
+		
+		if (num in this.cache) {
+			this.last = this.cache[num];
+			success(this.cache[num]);
+		} else {
+			return $.ajax({
+				url: this.base+path,
+				dataType: 'jsonp',
+				success: $.proxy(function(data) {
+					this.last = this.cache[num] = data;
+					success(data);
+				}, this),
+				error: error});
+		}
+	}
+};
+
+
+var xkcdDisplay = TerminalShell.commands['display'] = function(terminal, path) {
+	function fail() {
+		terminal.print($('<p>').addClass('error').text('display: unable to open image "'+path+'": No such file or directory.'));
+		terminal.setWorking(false);
+	}
+			
+	if (path) {
+		path = String(path);
+		num = Number(path.match(/^\d+/));
+		filename = pathFilename(path);
+		
+		if (num > xkcd.latest.num) {
+			terminal.print("Time travel mode not enabled.");
+			return;
+		}
+	} else {
+		num = xkcd.last.num;
+	}
+	
+	terminal.setWorking(true);
+	xkcd.get(num, function(data) {
+		if (!filename || (filename == pathFilename(data.img))) {
+			$('<img>')
+				.hide()
+				.load(function() {
+					terminal.print($('<h3>').text(data.num+": "+data.title));
+					$(this).fadeIn();
+					
+					var comic = $(this);
+					if (data.link) {
+						comic = $('<a>').attr('href', data.link).append($(this));
+					}
+					terminal.print(comic);
+					
+					terminal.setWorking(false);
+				})
+				.attr({src:data.img, alt:data.title, title:data.alt})
+				.addClass('comic');
+		} else {
+			fail();
+		}
+	}, fail);
+};
+
+// Edits
+
+TerminalShell.commands['l33t'] = function(terminal) {
+	terminal.print('if u c4n r34d th1s u r34lly n33d t0 g37 141d...');
+};
+
+TerminalShell.commands['next'] = function(terminal) {
+	terminal.print('Hey..hey, take it slow');
+};
+
+TerminalShell.commands['previous'] =
+TerminalShell.commands['prev'] = function(terminal) {
+	terminal.print('I\'m not a taperecorder');
+};
+
+TerminalShell.commands['first'] = function(terminal) {
+	terminal.print('At the beginning of it all, there was init');
+};
+
+TerminalShell.commands['last'] = function(terminal) {
+	terminal.print('My last wish is to die on apache');
+};
+
+TerminalShell.commands['random'] = function(terminal) {
+	terminal.print('Take 4, I dropped a die and it showed 4, thats random right ?');
+};
+
+TerminalShell.commands['goto'] = function(terminal, subcmd) {
+	terminal.print('Didn\'t you hear, goto is bad');
+};
+
+//TerminalShell.commands['startx'] = window.url("http://www.google.com");
+
+TerminalShell.commands['sudo'] = function(terminal) {
+	var cmd_args = Array.prototype.slice.call(arguments);
+	cmd_args.shift(); // terminal
+	if (cmd_args.join(' ') == 'make me a sandwich') {
+		terminal.print('Okay.');
+	} else {
+		var cmd_name = cmd_args.shift();
+		cmd_args.unshift(terminal);
+		cmd_args.push('sudo');
+		if (TerminalShell.commands.hasOwnProperty(cmd_name)) {
+			this.sudo = true;
+			this.commands[cmd_name].apply(this, cmd_args);
+			delete this.sudo;
+		} else if (!cmd_name) {
+			terminal.print('sudo what?');
+		} else {
+			terminal.print('sudo: '+cmd_name+': command not found');
+		}
+	}
+};
+
+TerminalShell.filters.push(function (terminal, cmd) {
+	if (/!!/.test(cmd)) {
+		var newCommand = cmd.replace('!!', this.lastCommand);
+		terminal.print(newCommand);
+		return newCommand;
+	} else {
+		return cmd;
+	}
+});
+
+TerminalShell.commands['shutdown'] = TerminalShell.commands['poweroff'] = function(terminal) {
+	if (this.sudo) {
+		terminal.print('Broadcast message from guest@dbpb');
+		terminal.print();
+		terminal.print('The system is going down for maintenance NOW!');
+		return $('#screen').fadeOut();
+	} else {
+		terminal.print('Must be root.');
+	}
+};
+
+TerminalShell.commands['logout'] =
+TerminalShell.commands['exit'] = 
+TerminalShell.commands['quit'] = function(terminal) {
+	terminal.print('Bye.');
+	$('#prompt, #cursor').hide();
+	terminal.promptActive = false;
+};
+
+TerminalShell.commands['restart'] = TerminalShell.commands['reboot'] = function(terminal) {
+	if (this.sudo) {
+		TerminalShell.commands['poweroff'](terminal).queue(function(next) {
+			window.location.reload();
+		});
+	} else {
+		terminal.print('Must be root.');
+	}
+};
+
+function linkFile(url) {
+	return {type:'link', enter:function() {
+		window.location = url;
+	}};
+}
+
+// Content based 
+function dirFile(dirname) {
+     return {type:'dir', enter:function() {
+			       if ( dirname == 'how_dare_they' ){			
+			   		TerminalShell.pwd = HOW_FS;
+			   		Terminal.config.prompt = 'guest@dbpb:/how_dare_they$';
+			   		Terminal.updateInputDisplay(); 
+			   }else if ( dirname == 'you\'re_a_douche'){
+				   // edit
+				   	TerminalShell.pwd = YOURE_FS;
+				 		Terminal.config.prompt = 'guest@dbpb:/you\'re_a_douche$';
+				 		Terminal.updateInputDisplay(); 
+			   }else if ( dirname == 'hilarious'){
+				   // edit
+				   TerminalShell.pwd = HILARIOUS_FS;
+				   Terminal.config.prompt = 'guest@dbpb:/hilarious$';
+				   Terminal.updateInputDisplay(); 
+			   }else if ( dirname == 'i_like_this'){
+				   // edit
+				   TerminalShell.pwd = ILIKE_FS;
+				   Terminal.config.prompt = 'guest@dbpb:/i_like_this$';
+				   Terminal.updateInputDisplay(); 
+			   }else if ( dirname == 'umm,wtf?!'){
+				   // edit
+				   TerminalShell.pwd = UMM_FS;
+				   Terminal.config.prompt = 'guest@dbpb:/umm,wtf?!$';
+				   Terminal.updateInputDisplay(); 			  
+			   }else{
+					 Terminal.config.prompt = 'seriously_fucked$';
+					 Terminal.updateInputDisplay();
+			   }
+
+	   }};
+   }
+
