@@ -1,0 +1,5 @@
+select * from html where url="http://dearblankpleaseblank.com/wtf.php" and xpath='//div[@class="subcontainer"]/div[@class!="sharing" or @class="subtextplease" or @class="submittedby"]//p'
+
+
+
+replace the link with the appropriate one to get the content.
